@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Banner() {
+function Carousel() {
   return (
     <div>
-      Banner
+      
     </div>
   )
 }
 
-export default Banner
+export default Carousel

@@ -1,9 +1,9 @@
-import React from 'react'
-import banner from '@components/banner'
+import Carousel from '@components/banner';
+import React from 'react';
 function page() {
   return (
     <div>
-      <banner/>
+    <Carousel/>
     </div>
   )
 }
