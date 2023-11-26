@@ -1,8 +1,8 @@
-import Carousel from '@components/banner';
+// ./app/card/page.js
 import Link from 'next/link';
 import Card from '@components/card';
-import React from 'react';
-function page() {
+
+export default function Page() {
   const cardsData = [
     {
       imageUrl: '/1.jpg',
@@ -27,24 +27,18 @@ function page() {
     },
     // ... rest of the data
   ];
-  
-  return (
-    <div>
-    <Carousel/>
-    
-    <div className="p-4 md:p-8">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-    {cardsData.map((card, index) => (
-      <div key={index} className="w-full p-2">
-        <Link href={card.link}>
-          <Card {...card} />
-        </Link>
-      </div>
-    ))}
-  </div>
-</div>
-    </div>
-  )
-}
 
-export default page
+  return (
+    <div className="p-4 md:p-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+        {cardsData.map((card, index) => (
+          <div key={index} className="w-full p-2">
+            <Link href={card.link}>
+              <Card {...card} />
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

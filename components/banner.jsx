@@ -1,58 +1,58 @@
-import React from 'react';
 import Image from 'next/image';
 
-const yourWidth = 1200; 
-const yourHeight = 800; 
-
-function Carousel() {
+const Carousel = () => {
   return (
-    <div className="relative max-w-screen-md mx-auto">
-      <div className="carousel">
-        <input className="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden />
-        <div className="carousel-item absolute opacity-0" style={{ height: '50%', width: '100%' }}>
-          <Image src="/1.jpg" alt="Image 1" width={yourWidth} height={yourHeight} className="w-full h-full object-cover" />
+    <div id="default-carousel" className="relative w-full" data-carousel="slide">
+      {/* Carousel wrapper */}
+      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+        {/* Item 1 */}
+        <div className="hidden duration-700 ease-in-out" data-carousel-item>
+          <Image src="/1.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." width={600} height={400} />
         </div>
-        <label htmlFor="carousel-3" className="prev control-1 w-10 h-10 ml-2 md:ml-8 absolute cursor-pointer hidden text-2xl font-bold text-white hover:text-gray-900 leading-tight text-center bg-black bg-opacity-50 rounded-full opacity-50">‹</label>
-        <label htmlFor="carousel-2" className="next control-1 w-10 h-10 mr-2 md:mr-8 absolute cursor-pointer hidden text-2xl font-bold text-white hover:text-gray-900 leading-tight text-center bg-black bg-opacity-50 rounded-full opacity-50">›</label>
-
-        <input className="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden />
-        <div className="carousel-item absolute opacity-0" style={{ height: '50%', width: '100%' }}>
-          <Image src="/2.jpg" alt="Image 2" width={yourWidth} height={yourHeight} className="w-full h-full object-cover" />
+        {/* Item 2 */}
+        <div className="hidden duration-700 ease-in-out" data-carousel-item>
+          <Image src="/2.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." width={600} height={400} />
         </div>
-        <label htmlFor="carousel-1" className="prev control-2 w-10 h-10 ml-2 md:ml-8 absolute cursor-pointer hidden text-2xl font-bold text-white hover:text-gray-900 leading-tight text-center bg-black bg-opacity-50 rounded-full opacity-50">‹</label>
-        <label htmlFor="carousel-3" className="next control-2 w-10 h-10 mr-2 md:mr-8 absolute cursor-pointer hidden text-2xl font-bold text-white hover:text-gray-900 leading-tight text-center bg-black bg-opacity-50 rounded-full opacity-50">›</label>
-
-        <input className="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden />
-        <div className="carousel-item absolute opacity-0" style={{ height: '50%', width: '100%' }}>
-          <Image src="/3.jpg" alt="Image 3" width={yourWidth} height={yourHeight} className="w-full h-full object-cover" />
+        {/* Item 3 */}
+        <div className="hidden duration-700 ease-in-out" data-carousel-item>
+          <Image src="/3.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." width={600} height={400} />
         </div>
-        <label htmlFor="carousel-2" className="prev control-3 w-10 h-10 ml-2 md:ml-8 absolute cursor-pointer hidden text-2xl font-bold text-white hover:text-gray-900 leading-tight text-center bg-black bg-opacity-50 rounded-full opacity-50">‹</label>
-        <label htmlFor="carousel-4" className="next control-3 w-10 h-10 mr-2 md:mr-8 absolute cursor-pointer hidden text-2xl font-bold text-white hover:text-gray-900 leading-tight text-center bg-black bg-opacity-50 rounded-full opacity-50">›</label>
-
-        <input className="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden />
-        <div className="carousel-item absolute opacity-0" style={{ height: '50%', width: '100%' }}>
-          <Image src="/4.jpg" alt="Image 4" width={yourWidth} height={yourHeight} className="w-full h-full object-cover" />
+        {/* Item 4 */}
+        <div className="hidden duration-700 ease-in-out" data-carousel-item>
+          <Image src="/4.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." width={600} height={400} />
         </div>
-        <label htmlFor="carousel-3" className="prev control-4 w-10 h-10 ml-2 md:ml-8 absolute cursor-pointer hidden text-2xl font-bold text-white hover:text-gray-900 leading-tight text-center bg-black bg-opacity-50 rounded-full opacity-50">‹</label>
-        <label htmlFor="carousel-1" className="next control-4 w-10 h-10 mr-2 md:mr-8 absolute cursor-pointer hidden text-2xl font-bold text-white hover:text-gray-900 leading-tight text-center bg-black bg-opacity-50 rounded-full opacity-50">›</label>
-
-        <ol className="carousel-indicators">
-          <li className="inline-block mr-3">
-            <label htmlFor="carousel-1" className="carousel-bullet cursor-pointer block text-4xl text-white hover:text-gray-900">•</label>
-          </li>
-          <li className="inline-block mr-3">
-            <label htmlFor="carousel-2" className="carousel-bullet cursor-pointer block text-4xl text-white hover:text-gray-900">•</label>
-          </li>
-          <li className="inline-block mr-3">
-            <label htmlFor="carousel-3" className="carousel-bullet cursor-pointer block text-4xl text-white hover:text-gray-900">•</label>
-          </li>
-          <li className="inline-block mr-3">
-            <label htmlFor="carousel-4" className="carousel-bullet cursor-pointer block text-4xl text-white hover:text-gray-900">•</label>
-          </li>
-        </ol>
+        {/* Item 5 */}
+        <div className="hidden duration-700 ease-in-out" data-carousel-item>
+          <Image src="/5.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." width={600} height={400} />
+        </div>
       </div>
+      {/* Slider indicators */}
+      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+      </div>
+      {/* Slider controls */}
+      <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <jpg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/jpg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4" />
+          </jpg>
+          <span className="sr-only">Previous</span>
+        </span>
+      </button>
+      <button type="button" className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <jpg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/jpg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
+          </jpg>
+          <span className="sr-only">Next</span>
+        </span>
+      </button>
     </div>
   );
-}
+};
 
 export default Carousel;
