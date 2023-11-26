@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Carousel() {
+function banner() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Carousel() {
   )
 }
 
-export default Carousel
+export default banner
