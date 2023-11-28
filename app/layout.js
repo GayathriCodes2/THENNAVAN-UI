@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
       <body>
         <main>
           <Header />
-          <div className="lg:px-14 px-8 mt-28">{children}</div>
+          <div className="px-14">{children}</div>
           <Whatsapp />
           <Footer />
 
