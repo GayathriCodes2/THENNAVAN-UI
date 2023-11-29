@@ -1,12 +1,12 @@
 // components/ProductCard.js
-
+"use client"
 import Link from 'next/link';
 
 const ProductCard = ({ imageUrl, heading, description, price, buyNowLink }) => {
   return (
     <div className="flex border p-2">
       {/* Left side: Image */}
-      <div className="flex-shrink-0">
+      <div className="flex-shrink">
         <img src={imageUrl} alt={heading} className="lg:w-64 w-44 lg:h-64 h-44 object-cover" />
       </div>
 
@@ -17,13 +17,15 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink }) => {
       </div>
 
       {/* Right side: Price and Buy Now button */}
-      <div className="flex-shrink-0 flex flex-col items-end">
-        <p className="text-lg font-semibold py-5">Rs.{price}</p>
-        <Link href={buyNowLink} className='py-5'>
-          <span className="bg-blue-500 text-white px-4 py-2 rounded mt-2">Buy Now</span>
-        </Link>
-      </div>
-    </div>
+      <div className="flex flex-col items-end">
+  <p className="text-lg font-semibold">Rs.{price}</p>
+  <Link href={buyNowLink} className='lg:py-5'>
+    <span className="border-green-500 text-green-500 border text-sm md:text-xs px-2 py-1 lg:px-3 lg:py-1 rounded mt-2">
+      Buy Now
+    </span>
+  </Link>
+</div>
+</div>
   );
 };
 
