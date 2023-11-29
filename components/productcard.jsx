@@ -20,7 +20,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink }) => {
       <div className="flex flex-col items-end">
   <p className="text-lg font-semibold">Rs.{price}</p>
   <Link href={buyNowLink} className='lg:py-5'>
-    <span className="border-green-500 text-green-500 border text-sm md:text-xs px-2 py-1 lg:px-3 lg:py-1 rounded mt-2">
+    <span className="border-green-500 text-green-500 border sm:text-sm md:text-xs px-2 py-1 lg:px-3 lg:py-1 rounded mt-2">
       Buy Now
     </span>
   </Link>
