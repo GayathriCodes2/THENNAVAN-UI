@@ -2,13 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-const images = [
-  '/1.jpg',
-  '/2.jpg',
-  '/3.jpg',
-  '/4.jpg',
-  '/5.jpg',
-];
+const images = ['/1.jpg', '/2.jpg', '/3.jpg', '/4.jpg', '/5.jpg'];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,7 +35,7 @@ const Carousel = () => {
             key={index}
             className={`${
               index === currentIndex ? 'block' : 'hidden'
-            } h-full`}
+            } h-full transition-transform transform -translate-x-full absolute top-0 left-0`}
           >
             <Image
               src={image}
@@ -49,7 +43,7 @@ const Carousel = () => {
               layout="responsive"
               width={1200}
               height={800}
-              className="absolute block w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}

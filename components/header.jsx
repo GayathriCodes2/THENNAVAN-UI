@@ -1,7 +1,7 @@
 // Header.js
 "use client"
 import React, { useState } from 'react';
-
+import Image from 'next/image';
 const Header = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -10,7 +10,7 @@ const Header = () => {
             {/* Logo and Navigation Menu (Desktop) */}
             <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                    <img src="/cultivate.png" alt="Logo" className="h-8 w-8" />
+                    <Image src="/cultivate.png" alt="Logo" className="h-8 w-8" height={8} width={8} />
                     <span className="text-lg font-bold">Our product</span>
                 </div>
             </div>
@@ -29,28 +29,12 @@ const Header = () => {
             <div className="flex">
                 
             <div className="md:hidden ml-0 self-end">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 cursor-pointer"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M4 6h16M4 12h16m-7 6h7"
-                    />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"/>
                 </svg>
             </div>
                 <div className='items-center space-x-2'>
-                <input
-                    type="text"
-                    placeholder="Search"
-                    className="px-4 py-1 border border-white rounded lg:w-40 transition-all duration-300 ease-in-out to-black focus:outline-none focus:border-green-400"
-                />
+                <input type="text" placeholder="Search" className="px-4 py-1 border text-black border-white rounded lg:w-40 transition-all duration-300 ease-in-out to-black focus:outline-none focus:border-green-400"/>
                 <button className="bg-white text-gray-800 px-2 py-1 rounded">Search</button>
 </div>
                  
