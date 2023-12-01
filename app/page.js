@@ -1,48 +1,57 @@
 import Carousel from '@components/banner';
-import Link from 'next/link';
-import Card from '@components/card';
+import Card from '@components/imageWithLabel';
+import VarietyCard from '@components/varietyCard';
 import React from 'react';
 function page() {
-  const cardsData = [
-    {
-      imageUrl: '/1.jpg',
-      title: 'Product 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      price: '19.99',
-      link: '/product1',
-    },
-    {
-      imageUrl: '/2.jpg',
-      title: 'Product 2',
-      description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      price: '29.99',
-      link: '/product2',
-    },
-    {
-      imageUrl: '/3.jpg',
-      title: 'Product 3',
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-      price: '39.99',
-      link: '/product3',
-    },
-    // ... rest of the data
-  ];
-  
+
+  const products = [{
+    imageUrl: 'https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80',
+    heading: 'Product Name',
+    price: '$99.99',
+    description: 'This is a description of the product.',
+    productUrl: '/product/product1',
+  },{
+    imageUrl: 'https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80',
+    heading: 'Product Name',
+    price: '$99.99',
+    description: 'This is a description of the product.',
+    productUrl: '/product/product1',
+  },{
+    imageUrl: 'https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80',
+    heading: 'Product Name',
+    price: '$99.99',
+    description: 'This is a description of the product.',
+    productUrl: '/product/product1',
+  },{
+    imageUrl: 'https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80',
+    heading: 'Product Name',
+    price: '$99.99',
+    description: 'This is a description of the product.',
+    productUrl: '/product/product1',
+  }
+];
+
   return (
     <div>
     <Carousel/>
-    
-    <div className="p-4 md:p-8">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-    {cardsData.map((card, index) => (
-      <div key={index} className="w-full p-2">
-        <Link href={card.link}>
-          <Card {...card} />
-        </Link>
+    <div className=' h-screen'>
+    <Card
+        imageUrl="/9.png"
+        label="From Farmers"
+      />
+        <div className="flex flex-wrap mx-2">
+        {products.map((product, index) => (
+          <VarietyCard
+            key={index}
+            imageUrl={product.imageUrl}
+            heading={product.heading}
+            price={product.price}
+            description={product.description}
+            productUrl={product.productUrl}
+          />
+        ))}
       </div>
-    ))}
-  </div>
-</div>
+      </div>
     </div>
   )
 }

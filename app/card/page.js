@@ -5,14 +5,14 @@ import Card from '@components/card';
 export default function Page() {
   const cardsData = [
     {
-      imageUrl: '/1.jpg',
+      imageUrl: '/6.jpg',
       title: 'Product 1',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       price: '19.99',
       link: '/product1',
     },
     {
-      imageUrl: '/2.jpg',
+      imageUrl: '/7.jpg',
       title: 'Product 2',
       description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       price: '29.99',
