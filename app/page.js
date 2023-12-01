@@ -1,47 +1,48 @@
+import HomeProfileImage from '@components/homeProfileImage';
+import HomepageCard from '@components/homePageCard';
+import SeeMoreButton from '@components/button';
 import Carousel from '@components/banner';
-import Card from '@components/imageWithLabel';
-import VarietyCard from '@components/varietyCard';
 import React from 'react';
-function page() {
 
+function page() {
+  
   const products = [{
-    imageUrl: 'https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80',
+    imageUrl: '/6.jpg',
     heading: 'Product Name',
-    price: '$99.99',
+    price: '99.99',
     description: 'This is a description of the product.',
-    productUrl: '/product/product1',
+    productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: 'https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80',
+    imageUrl: '/6.jpg',
     heading: 'Product Name',
-    price: '$99.99',
+    price: '99.99',
     description: 'This is a description of the product.',
-    productUrl: '/product/product1',
+    productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: 'https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80',
+    imageUrl: '/6.jpg',
     heading: 'Product Name',
-    price: '$99.99',
+    price: '99.99',
     description: 'This is a description of the product.',
-    productUrl: '/product/product1',
+    productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: 'https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80',
+    imageUrl: '/6.jpg',
     heading: 'Product Name',
-    price: '$99.99',
+    price: '99.99',
     description: 'This is a description of the product.',
-    productUrl: '/product/product1',
-  }
+    productUrl: '/fromfarmersproducts',
+  },
 ];
 
   return (
     <div>
     <Carousel/>
-    <div className=' h-screen'>
-    <Card
+    <HomeProfileImage
         imageUrl="/9.png"
         label="From Farmers"
       />
-        <div className="flex flex-wrap mx-2">
+      <div>
         {products.map((product, index) => (
-          <VarietyCard
+          <HomepageCard
             key={index}
             imageUrl={product.imageUrl}
             heading={product.heading}
@@ -50,7 +51,8 @@ function page() {
             productUrl={product.productUrl}
           />
         ))}
-      </div>
+          <SeeMoreButton to="/products"/>
+
       </div>
     </div>
   )

@@ -1,15 +1,18 @@
 // components/ImageWithLabel.jsx
-
+import Image from 'next/image';
 import React from 'react';
 
-const ImageWithLabel = ({ imageUrl, label }) => {
+const HomeProfileImage = ({ imageUrl, label }) => {
   return (
     <div className="flex justify-center items-center py-5">
       {/* Desktop View */}
       <div className="flex items-center">
-        <img
+        <Image
           className="w-12 h-12 lg:w-20 lg:h-20 md:max-h-96 md:object-cover md:object-center rounded-full mr-4"
           src={imageUrl}
+          height={12}
+          width={12}
+          layout='responsive'
           alt="Image"
         />
         <h2 className="sm:text-4xl text-xl font-bold">{label}</h2>
@@ -18,4 +21,4 @@ const ImageWithLabel = ({ imageUrl, label }) => {
   );
 };
 
-export default ImageWithLabel;
+export default HomeProfileImage;
