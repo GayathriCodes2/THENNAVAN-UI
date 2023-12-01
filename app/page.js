@@ -1,5 +1,5 @@
 import HomeProfileImage from '@components/homeProfileImage';
-import HomepageCard from '@components/homePageCard';
+import HomepageListCard from '@components/homePageListCard';
 import SeeMoreButton from '@components/button';
 import Carousel from '@components/banner';
 import React from 'react';
@@ -37,12 +37,12 @@ function page() {
     <div>
     <Carousel/>
     <HomeProfileImage
-        imageUrl="/9.png"
-        label="From Farmers"
-      />
+        text="From Farmers" path="/some-path" ButtonContent="Click me"/>
+
+        
       <div>
         {products.map((product, index) => (
-          <HomepageCard
+          <HomepageListCard
             key={index}
             imageUrl={product.imageUrl}
             heading={product.heading}
@@ -51,7 +51,6 @@ function page() {
             productUrl={product.productUrl}
           />
         ))}
-          <SeeMoreButton to="/products"/>
 
       </div>
     </div>

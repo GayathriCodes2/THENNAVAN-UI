@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 const HomepageCard = ({ imageUrl, heading, price, description, productUrl }) => {
@@ -7,7 +6,7 @@ const HomepageCard = ({ imageUrl, heading, price, description, productUrl }) => 
     <div className="relative flex flex-col text-gray-700 bg-white shadow-md lg:w-1/4 md:w-1/4 sm:w-1/2 w-full mb-8 lg:mb-0">
       <Link href={productUrl}>
         <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
-          <Image
+          <img
             src={imageUrl}
             className="object-cover w-full h-full"
             height={20}

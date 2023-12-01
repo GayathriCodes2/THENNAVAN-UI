@@ -1,6 +1,5 @@
 // components/ProductCard.js
 "use client"
-import Image from 'next/image';
 import Link from 'next/link';
 
 const ProductCard = ({ imageUrl, heading, description, price, buyNowLink }) => {
@@ -8,7 +7,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink }) => {
     <div className="flex border p-2">
       {/* Left side: Image */}
       <div className="flex-shrink">
-        <Image src={imageUrl} alt={heading} height={44} width={44} className="lg:w-64 w-44 lg:h-64 h-44 object-cover" />
+        <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-64 w-44 lg:h-64 h-44 object-cover" />
       </div>
 
       {/* Middle part: Heading and Description */}

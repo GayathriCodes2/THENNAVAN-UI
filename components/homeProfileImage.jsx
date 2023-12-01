@@ -1,22 +1,15 @@
-// components/ImageWithLabel.jsx
-import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 
-const HomeProfileImage = ({ imageUrl, label }) => {
+const HomeProfileImage = ({ text, path, ButtonContent }) => {
   return (
-    <div className="flex justify-center items-center py-5">
-      {/* Desktop View */}
-      <div className="flex items-center">
-        <Image
-          className="w-12 h-12 lg:w-20 lg:h-20 md:max-h-96 md:object-cover md:object-center rounded-full mr-4"
-          src={imageUrl}
-          height={12}
-          width={12}
-          layout='responsive'
-          alt="Image"
-        />
-        <h2 className="sm:text-4xl text-xl font-bold">{label}</h2>
-      </div>
+    <div className="flex items-center justify-center p-10 text-black font-bold text-lg rounded-md shadow-md">
+      <span className="flex-1">{text}</span>
+      <Link href={path}>
+        <button className="bg-transparent text-black border-2 border-black rounded-full px-4 py-2 hover:text-black">
+          {ButtonContent}
+        </button>
+      </Link>
     </div>
   );
 };
