@@ -1,4 +1,5 @@
 import Carousel from '@components/banner';
+import SeeMoreButton from '@components/button';
 import Card from '@components/imageWithLabel';
 import VarietyCard from '@components/varietyCard';
 import React from 'react';
@@ -11,19 +12,19 @@ function page() {
     description: 'This is a description of the product.',
     productUrl: '/product/product1',
   },{
-    imageUrl: '/6.jpg',
+    imageUrl: '/7.jpg',
     heading: 'Product Name',
     price: '99.99',
     description: 'This is a description of the product.',
     productUrl: '/product/product1',
   },{
-    imageUrl: '/6.jpg',
+    imageUrl: '/8.jpg',
     heading: 'Product Name',
     price: '99.99',
     description: 'This is a description of the product.',
     productUrl: '/product/product1',
   },{
-    imageUrl: '/6.jpg',
+    imageUrl: '/9.jpg',
     heading: 'Product Name',
     price: '99.99',
     description: 'This is a description of the product.',
@@ -50,6 +51,7 @@ function page() {
           />
         ))}
       </div>
+      <SeeMoreButton to="/product"/>
     </div>
   )
 }

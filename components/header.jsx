@@ -6,7 +6,7 @@ const Header = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="bg-green-600 text-white p-4 flex flex-col md:flex-row justify-between items-center">
+        <header className="bg-green-400 mt-2 mx-2 text-white p-4 flex flex-col md:flex-row justify-between items-center lg:rounded-full">
             {/* Logo and Navigation Menu (Desktop) */}
             <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
@@ -19,9 +19,9 @@ const Header = () => {
             <div className="flex items-center space-x-4">
                 <nav className="hidden md:flex items-center space-x-4 ml-auto ">
                     <a href="/about-us" className="nav-link hover:bg-green-500 transition-all rounded p-2">Who We Are</a>
-                    <a href="/contact-us" className="nav-link  hover:bg-green-500 transition-all p-2">Get in Touch</a>
-                    <a href="/our-cultivated-products" className="nav-link  hover:bg-green-500 transition-all p-2">Our Harvested Goods</a>
-                    <a href="/famous-products" className="nav-link  hover:bg-green-500 transition-all p-2">Signature Local Delicacies</a>
+                    <a href="/contact-us" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Get in Touch</a>
+                    <a href="/our-cultivated-products" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Our Harvested Goods</a>
+                    <a href="/famous-products" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Signature Local Delicacies</a>
                 </nav>
             </div>
 
@@ -37,11 +37,10 @@ const Header = () => {
                 <input type="text" placeholder="Search" className="px-4 py-1 border text-black border-white rounded lg:w-40 transition-all duration-300 ease-in-out to-black focus:outline-none focus:border-green-400"/>
                 <button className="bg-white text-gray-800 px-2 py-1 rounded">Search</button>
 </div>
-                 
-            </div>
+                            </div>
 
             {/* Mobile Menu Icon (Right-aligned) */}
-           
+
 
             {/* Navigation Menu (Mobile) */}
             {isMobileMenuOpen && (
