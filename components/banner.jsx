@@ -35,7 +35,7 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full h-[60vw]">
-      <div className="relative h-full overflow-hidden rounded-lg">
+      <div className="relative h-full overflow-hidden rounded-lg transition-all duration-700 ease-in-out">
         {images.map((image, index) => (
           <div
             key={index}

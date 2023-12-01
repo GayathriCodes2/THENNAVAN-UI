@@ -1,11 +1,11 @@
 // components/SeeMoreButton.js
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
 
 const SeeMoreButton = ({ to }) => {
   return (
     <Link href={to}>
-      <div className="bg-blue-500 w-28 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <div className="border-black border bg-black text-white w-28 hover:bg-white hover:text-black transition-all font-bold py-2 px-4 rounded">
         See More
       </div>
     </Link>

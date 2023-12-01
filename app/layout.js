@@ -1,6 +1,6 @@
+import Whatsapp from '@components/whatsapp';
 import Footer from '@components/footer';
 import Header from '@components/header';
-import Whatsapp from '@components/whatsapp';
 import '@styles/global.css';
 
 export const metadata = {
