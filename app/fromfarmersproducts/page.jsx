@@ -1,6 +1,6 @@
 // pages/index.js
 
-import ProductCard from '@components/ProductCard';
+import ProductCard from "@components/productcard";
 
 const products = [
   {
