@@ -37,7 +37,7 @@ function page() {
     <div>
     <Carousel/>
     <HomeProfileImage
-        text="From Farmers" path="/some-path" ButtonContent="Click me"/>
+        text="From Farmers" path="/some-path" ButtonContent="See more"/>
 
         
       <div>
