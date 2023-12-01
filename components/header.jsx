@@ -1,16 +1,17 @@
 // Header.js
 "use client"
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const Header = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="bg-green-600 mt-2 mx-2 text-white p-4 flex flex-col md:flex-row justify-between items-center lg:rounded-full">
+        <header className="bg-green-400 mt-2 mx-2 text-white p-4 flex flex-col md:flex-row justify-between items-center lg:rounded-full">
             {/* Logo and Navigation Menu (Desktop) */}
             <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                    <img src="/cultivate.png" alt="Logo" className="h-8 w-8" />
+                    <Image src="/cultivate.png" alt="Logo" className="h-8 w-8" width={180}height={180}/>
                     <span className="text-lg font-bold">Our product</span>
                 </div>
             </div>
@@ -49,7 +50,7 @@ const Header = () => {
                     <input
                         type="text"
                         placeholder="Search"
-                        className="px-4 py-1 border border-white rounded lg:w-40 transition-all duration-300 ease-in-out to-black focus:outline-none focus:border-green-400"
+                        className="px-4 py-1 border border-white rounded lg:w-40 transition-all duration-300 ease-in-out to-black focus:outline-none focus:border-green-400 text-black"
                     />
                     <button className="bg-white text-gray-800 px-2 py-1 rounded">Search</button>
                 </div>

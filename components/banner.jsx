@@ -49,7 +49,7 @@ const Carousel = () => {
               layout="responsive"
               width={1200}
               height={800}
-              className="absolute block w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              className="absolute block mt-2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             />
           </div>
         ))}
