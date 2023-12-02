@@ -34,7 +34,7 @@ function page() {
     <HomeProfileImage
         text="From Farmers" path="/some-path" ButtonContent="Click me"/>
    
-      <div className='grid lg:grid-cols-4 sm:grid-cols-2 justify-around'>
+      <div className='grid lg:grid-cols-4 grid-cols-2 justify-around'>
       {products.map((item, index) => (
         <HomepageListCard key={index} data={item} />
       ))}
