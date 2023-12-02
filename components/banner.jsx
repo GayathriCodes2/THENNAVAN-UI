@@ -35,26 +35,25 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full h-[60vw]">
-      <div className="relative my-auto overflow-hidden rounded-lg transition-transform duration-700 ease-in-out transform">
-  {images.map((image, index) => (
-    <div
-      key={index}
-      className={`${
-        index === currentIndex ? 'block' : 'hidden'
-      } h-full transform translate-x-full`}
-      style={{ transform: `translateX(${(index - currentIndex) * 100}%)` }}
-    >
-      <Image
-        src={image}
-        alt={`Slide ${index + 1}`}
-        layout="responsive"
-        width={1200}
-        height={800}
-        className="absolute block mt-2 w-full h-full"
-      />
-    </div>
-  ))}
-</div>
+      <div className="relative h-full overflow-hidden rounded-lg transition-all duration-700 ease-in-out">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`${
+              index === currentIndex ? 'block' : 'hidden'
+            } h-full`}
+          >
+            <Image
+              src={image}
+              alt={`Slide ${index + 1}`}
+              layout="responsive"
+              width={1200}
+              height={800}
+              className="absolute block mt-2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  transition-all duration-700 ease-in-out"
+            />
+          </div>
+        ))}
+      </div>
       <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
         {images.map((_, index) => (
           <button
