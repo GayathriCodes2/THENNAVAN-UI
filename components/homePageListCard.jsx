@@ -1,33 +1,26 @@
-import Link from 'next/link';
-import React from 'react';
-const HomepageCard = ({ imageUrl, heading, price, description, productUrl }) => {
-  return (
+import Image from 'next/image';
 
-    <div className="relative flex flex-col text-gray-700 bg-white shadow-md lg:w-1/4 md:w-1/4 sm:w-1/2 w-full mb-8 lg:mb-0">
-      <Link href={productUrl}>
-        <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
-          <img
-            src={imageUrl}
-            className="object-cover w-full h-full"
-            height={20}
-            width={20}
-            alt="Product"
-          />
+const HomepageCard = ({ data }) => {
+  return (
+    <div className="shadow-lg border rounded-md overflow-hidden p-4 m-6 bg-slate-100">
+
+      <div className="relative h-48 lg:w-full">
+        <Image
+          src={data.imageUrl}
+          alt={data.heading}
+          layout="fill"
+          objectFit="cover"
+          loading="lazy"
+          className='rounded'
+        />
+      </div>
+      <div className="p-2 lg:flex-grow">
+        
+        <div className="flex items-center justify-between my-auto">
+          <h3 className="text-xl font-semibold mb-2 mt-2">{data.heading}</h3>
+          <p className="text-lg font-bold text-green-500">${data.price}</p>
         </div>
-        <div className="p-6">
-          <div className="flex items-center justify-between mb-2">
-            <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-              {heading}
-            </p>
-            <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-              {price}
-            </p>
-          </div>
-          <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
-            {description}
-          </p>
-        </div>
-      </Link>
+      </div>
     </div>
   );
 };

@@ -1,34 +1,29 @@
 import HomeProfileImage from '@components/homeProfileImage';
 import HomepageListCard from '@components/homePageListCard';
-import SeeMoreButton from '@components/button';
 import Carousel from '@components/banner';
 import React from 'react';
 
 function page() {
   
   const products = [{
-    imageUrl: '/6.jpg',
+    imageUrl: '/22.jpg',
     heading: 'Product Name',
     price: '99.99',
-    description: 'This is a description of the product.',
     productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: '/7.jpg',
+    imageUrl: '/22.jpg',
     heading: 'Product Name',
     price: '99.99',
-    description: 'This is a description of the product.',
     productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: '/8.jpg',
+    imageUrl: '/22.jpg',
     heading: 'Product Name',
     price: '99.99',
-    description: 'This is a description of the product.',
     productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: '/9.jpg',
+    imageUrl: '/22.jpg',
     heading: 'Product Name',
     price: '99.99',
-    description: 'This is a description of the product.',
     productUrl: '/fromfarmersproducts',
   },
 ];
@@ -38,20 +33,11 @@ function page() {
     <Carousel/>
     <HomeProfileImage
         text="From Farmers" path="/some-path" ButtonContent="Click me"/>
-
-        
-      <div>
-        {products.map((product, index) => (
-          <HomepageListCard
-            key={index}
-            imageUrl={product.imageUrl}
-            heading={product.heading}
-            price={product.price}
-            description={product.description}
-            productUrl={product.productUrl}
-          />
-        ))}
-
+   
+      <div className='grid lg:grid-cols-4 sm:grid-cols-2 justify-around'>
+      {products.map((item, index) => (
+        <HomepageListCard key={index} data={item} />
+      ))}
       </div>
     </div>
   )
