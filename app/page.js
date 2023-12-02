@@ -1,6 +1,5 @@
 import HomeProfileImage from '@components/homeProfileImage';
 import HomepageListCard from '@components/homePageListCard';
-import SeeMoreButton from '@components/button';
 import Carousel from '@components/banner';
 import React from 'react';
 

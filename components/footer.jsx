@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className="mb-4 md:mb-0 flex flex-col items-center md:flex-row">
           <a href="/get-in-touch" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Get in Touch</a>
-          <a href="/sell-with-us" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Sell with Us</a>
+          <a href="/sellwithus" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Sell with Us</a>
           <a href="/terms-and-conditions" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Terms & Conditions</a>
           <a href="/reviews" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Reviews</a>
           <a href="/blog" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Blog</a>
