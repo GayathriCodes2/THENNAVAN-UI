@@ -30,17 +30,29 @@ function page() {
 
   return (
     <div>
-    <Carousel/>
-    <HomeProfileImage
-        text="From Farmers" path="/some-path" ButtonContent="Click me"/>
-   
+      <Carousel/>
+
+      <HomeProfileImage
+        text="From Farmers" path="/some-path" ButtonContent="See more"/>
+    
       <div className='grid lg:grid-cols-4 grid-cols-2 justify-around'>
-      {products.map((item, index) => (
-        <HomepageListCard key={index} data={item} />
-      ))}
+        {products.map((item, index) => (
+          // This code is for From Farmers Home page card section
+          <HomepageListCard key={index} data={item} />
+        ))}
+      </div>
+      
+      <HomeProfileImage
+        text="Taste of our land" path="/some-path" ButtonContent="See more"/>
+
+      <div className='grid lg:grid-cols-4 grid-cols-2 justify-around'>  
+        {products.map((item, index) => (
+          // This code is for Taste of our land Home page card section
+          <HomepageListCard key={index} data={item} />
+        ))}
       </div>
     </div>
   )
 }
 
-export default page
+export default page;

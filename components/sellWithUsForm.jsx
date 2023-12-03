@@ -203,7 +203,7 @@ Product Details: ${productDetails}
                 <button
                     type="submit"
                     className="border-black border bg-black text-white w-28 hover:bg-white hover:text-black transition-all font-bold py-2 px-4 rounded">
-                    Submit
+                    Proceed
                 </button>
             </form>
         </div>

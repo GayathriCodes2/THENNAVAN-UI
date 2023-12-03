@@ -19,7 +19,7 @@ const Header = () => {
             <div className="flex items-center space-x-4">
                 <nav className="hidden md:flex items-center space-x-4 ml-auto ">
                     <a href="/about-us" className="nav-link hover:bg-green-500 transition-all rounded p-2">Who We Are</a>
-                    <a href="/contact-us" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Get in Touch</a>
+                    <a href="/sellwithus" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Sell With Us</a>
                     <a href="/our-cultivated-products" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Our Harvested Goods</a>
                     <a href="/famous-products" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Signature Local Delicacies</a>
                 </nav>
@@ -56,7 +56,7 @@ const Header = () => {
             {isMobileMenuOpen && (
                 <div className="md:hidden flex flex-col items-center space-y-2">
                     <a href="/about-us" className="nav-link hover:bg-green-500 transition-all p-2">Who We Are</a>
-                    <a href="/contact-us" className="nav-link  hover:bg-green-500 transition-all p-2">Get in Touch</a>
+                    <a href="/sellwithus" className="nav-link  hover:bg-green-500 transition-all p-2">Sell With Us</a>
                     <a href="/our-cultivated-products" className="nav-link  hover:bg-green-500 transition-all p-2">Our Harvested Goods</a>
                     <a href="/famous-products" className="nav-link  hover:bg-green-500 transition-all p-2">Signature Local Delicacies</a>
                 </div>
