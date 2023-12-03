@@ -31,6 +31,8 @@ function page() {
   return (
     <div>
       <Carousel/>
+      
+      <hr className="w-96 h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10 "></hr>
 
       <HomeProfileImage
         text="From Farmers" path="/some-path" ButtonContent="See more"/>
@@ -41,6 +43,8 @@ function page() {
           <HomepageListCard key={index} data={item} />
         ))}
       </div>
+      
+      <hr className="w-96 h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10 "></hr>
       
       <HomeProfileImage
         text="Taste of our land" path="/some-path" ButtonContent="See more"/>
