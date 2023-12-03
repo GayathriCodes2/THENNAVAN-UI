@@ -1,10 +1,13 @@
-"use client"
+"use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const images = [
   '/1.jpg',
   '/2.jpg',
+  '/3.jpg',
+  '/4.jpg',
+  '/5.jpg',
   '/3.jpg',
   '/4.jpg',
   '/5.jpg',
@@ -16,7 +19,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change slide every 5 seconds
+    }, 2000); // Change slide every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -34,14 +37,14 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[60vw]">
+    <div className="relative w-full lg:h-[30vw] h-[60vw] lg:my-2">
       <div className="relative h-full overflow-hidden rounded-lg transition-all duration-700 ease-in-out">
         {images.map((image, index) => (
           <div
             key={index}
             className={`${
-              index === currentIndex ? 'block' : 'hidden'
-            } h-full`}
+              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            } h-full transition-opacity duration-700 ease-in-out`}
           >
             <Image
               src={image}
@@ -49,7 +52,7 @@ const Carousel = () => {
               layout="responsive"
               width={1200}
               height={800}
-              className="absolute block mt-2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  transition-all duration-700 ease-in-out"
+              className="absolute block mt-2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 transition-all duration-700 ease-in-out"
             />
           </div>
         ))}
