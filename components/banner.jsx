@@ -8,6 +8,9 @@ const images = [
   '/3.jpg',
   '/4.jpg',
   '/5.jpg',
+  '/3.jpg',
+  '/4.jpg',
+  '/5.jpg',
 ];
 
 const Carousel = () => {
@@ -34,7 +37,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[60vw]">
+    <div className="relative w-full lg:h-[45vw] h-[60vw] lg:my-2">
       <div className="relative h-full overflow-hidden rounded-lg transition-all duration-700 ease-in-out">
         {images.map((image, index) => (
           <div
