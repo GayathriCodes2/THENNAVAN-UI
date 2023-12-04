@@ -28,6 +28,29 @@ function page() {
   },
 ];
 
+const tastyProducts = [{
+  imageUrl: '/22.jpg',
+  heading: 'Product Name',
+  price: '99.99',
+  productUrl: '/tasteofourlandproducts',
+},{
+  imageUrl: '/22.jpg',
+  heading: 'Product Name',
+  price: '99.99',
+  productUrl: '/tasteofourlandproducts',
+},{
+  imageUrl: '/22.jpg',
+  heading: 'Product Name',
+  price: '99.99',
+  productUrl: '/tasteofourlandproducts',
+},{
+  imageUrl: '/22.jpg',
+  heading: 'Product Name',
+  price: '99.99',
+  productUrl: '/tasteofourlandproducts',
+},
+];
+
   return (
     <div>
       <Carousel/>
@@ -60,7 +83,7 @@ function page() {
       />
 
       <div className='grid lg:grid-cols-4 grid-cols-2 justify-around'>  
-        {products.map((item, index) => (
+        {tastyProducts.map((item, index) => (
           // This code is for Taste of our land Home page card section
           <HomepageListCard key={index} data={item} />
         ))}
