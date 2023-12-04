@@ -29,24 +29,20 @@ function page() {
 ];
 
 const tastyProducts = [{
-  imageUrl: '/22.jpg',
-  heading: 'Product Name',
-  price: '99.99',
+  imageUrl: '/Tirunelveli-Halwa.jpg',
+  heading: 'Tirunelveli - Halwa',
   productUrl: '/tasteofourlandproducts',
 },{
-  imageUrl: '/22.jpg',
-  heading: 'Product Name',
-  price: '99.99',
+  imageUrl: '/Thoothukudi-Macaroons.jpg',
+  heading: 'Thoothukudi - Macaroons',
   productUrl: '/tasteofourlandproducts',
 },{
-  imageUrl: '/22.jpg',
-  heading: 'Product Name',
-  price: '99.99',
+  imageUrl: '/Peanut-candy.jpg',
+  heading: 'Kovilpatti - Kadalai mittai',
   productUrl: '/tasteofourlandproducts',
 },{
-  imageUrl: '/22.jpg',
-  heading: 'Product Name',
-  price: '99.99',
+  imageUrl: '/Banana-chips.jpg',
+  heading: 'Nagercoil - Chips',
   productUrl: '/tasteofourlandproducts',
 },
 ];
@@ -55,7 +51,7 @@ const tastyProducts = [{
     <div>
       <Carousel/>
       
-      <hr className="w-96 h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10 "></hr>
+      <hr className="lg:w-96 w-40 h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10 "></hr>
 
       <HomeProfileImage
         text="From Farmers"
@@ -72,7 +68,7 @@ const tastyProducts = [{
         ))}
       </div>
       
-      <hr className="w-96 h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10 "></hr>
+      <hr className="lg:w-96 w-40 h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10 "></hr>
       
       <HomeProfileImage
         text="Taste of our land"
