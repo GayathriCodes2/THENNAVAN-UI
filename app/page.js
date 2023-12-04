@@ -33,7 +33,12 @@ function page() {
       <Carousel/>
 
       <HomeProfileImage
-        text="From Farmers" path="/some-path" ButtonContent="See more"/>
+        text="From Farmers"
+        path="/fromfarmersproducts"
+        ButtonContent="See More"
+        imageUrl="/9.png"
+        altText="Farmer Logo"
+      />
     
       <div className='grid lg:grid-cols-4 grid-cols-2 justify-around'>
         {products.map((item, index) => (
@@ -43,7 +48,12 @@ function page() {
       </div>
       
       <HomeProfileImage
-        text="Taste of our land" path="/some-path" ButtonContent="See more"/>
+        text="Taste of our land"
+        path="/tasteofourlandproducts"
+        ButtonContent="See More"
+        imageUrl="/9.png"
+        altText="Taste Logo"
+      />
 
       <div className='grid lg:grid-cols-4 grid-cols-2 justify-around'>  
         {products.map((item, index) => (
