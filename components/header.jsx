@@ -6,7 +6,7 @@ const Header = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="bg-green-400 mt-2 mx-2 text-white p-3 flex flex-col md:flex-row justify-between items-center lg:rounded-full">
+        <header className="bg-green-600 mt-2 mx-2 text-white p-3 flex flex-col md:flex-row justify-between items-center lg:rounded-full">
             {/* Logo and Navigation Menu (Desktop) */}
             <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">

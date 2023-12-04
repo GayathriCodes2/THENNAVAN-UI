@@ -1,6 +1,6 @@
 // Footer.js
 import React from 'react';
-
+import Link from 'next/link';
 const Footer = () => {
   return (
     <>
@@ -8,12 +8,12 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-around items-center">
         {/* Navigation Links */}
         <div className="mb-4 md:mb-0 flex flex-col items-center md:flex-row">
-          <a href="/get-in-touch" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Get in Touch</a>
-          <a href="/sellwithus" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Sell with Us</a>
-          <a href="/terms-and-conditions" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Terms & Conditions</a>
-          <a href="/reviews" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Reviews</a>
-          <a href="/blog" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Blog</a>
-          <a href="/faqs" className="footer-link hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">FAQs</a>
+          <Link href="/get-in-touch" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Get in Touch</Link>
+          <Link href="/sellwithus" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Sell with Us</Link>
+          <Link href="/terms-and-conditions" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Terms & Conditions</Link>
+          <Link href="/reviews" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Reviews</Link>
+          <Link href="/blog" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Blog</Link>
+          <Link href="/faqs" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">FAQs</Link>
         </div>
 
         {/* Social Media Icons */}
