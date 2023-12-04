@@ -17,7 +17,7 @@ const HomepageCard = ({ data }) => {
       <div className="lg:p-2 lg:flex-grow">
         
         <div className="flex items-center justify-between my-auto">
-          <h3 className="lg:text-xl text-sm font-semibold mb-2 mt-2">{data.heading}</h3>
+          <h4 className="lg:text-xl text-sm font-semibold mb-2 mt-2">{data.heading}</h4>
           <p className="lg:text-lg font-bold text-xs text-green-500">${data.price}</p>
         </div>
       </div>
