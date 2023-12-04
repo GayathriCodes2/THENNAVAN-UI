@@ -19,7 +19,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change slide every 2 seconds
+    }, 4000); // Change slide every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -37,7 +37,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full lg:h-[45vw] h-[60vw] lg:my-2">
+    <div className="relative w-full lg:h-[30vw] h-[60vw] lg:my-5">
       <div className="relative h-full overflow-hidden rounded-lg transition-all duration-700 ease-in-out">
         {images.map((image, index) => (
           <div

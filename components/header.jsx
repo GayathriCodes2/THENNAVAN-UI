@@ -1,7 +1,7 @@
 // Header.js
 "use client"
 import React, { useState } from 'react';
-import Image from 'next/image';
+
 const Header = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -10,8 +10,8 @@ const Header = () => {
             {/* Logo and Navigation Menu (Desktop) */}
             <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                    <Image src="/cultivate.png" alt="Logo" className="h-8 w-8" height={8} width={8} />
-                    <span className="text-lg font-bold">Our product</span>
+                    <img src="/cultivate.png" alt="Logo" className="h-8 w-8"/>
+                    <span className="text-lg font-bold">Thennavan</span>
                 </div>
             </div>
 
