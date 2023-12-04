@@ -20,7 +20,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink }) => {
       <div className="flex flex-col items-end">
         <p className="text-lg font-semibold">Rs.{price}</p>
         <Link href={buyNowLink} className='self-end lg:mt-4 mt-2'>
-          <button className="w-full md:w-auto px-1 lg:px-4 py-2 bg-white border-green-500 text-green-500 rounded-md focus:outline-none border hover:bg-green-500 hover:text-white transition duration-300 ease-in-out sm:text-xs">
+          <button className="w-full md:w-auto sm:px-1 px-2 lg:px-4 py-2 bg-white border-green-500 text-green-500 rounded-md focus:outline-none border hover:bg-green-500 hover:text-white transition duration-300 ease-in-out sm:text-xs">
             Pre Book
           </button>
         </Link>
