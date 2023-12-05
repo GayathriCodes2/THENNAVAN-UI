@@ -3,7 +3,7 @@ import React from 'react';
 
 const TermsAndConditions = () => {
   return (
-    <div className="bg-white p-4 md:p-8 space-y-4">
+    <div className="bg-white p-4 md:p-8 space-y-4 font-sans">
       <h1 className="text-2xl md:text-3xl font-bold mb-4 mx-auto text-center">
         Terms and Conditions - Our Collective Understanding
       </h1>
@@ -15,7 +15,7 @@ const TermsAndConditions = () => {
           <h1 className="font-bold text-xl md:text-2xl mx-auto text-center">
             Dear Beloved Customers and Collaborators,
           </h1>
-          <p className="text-sm md:text-base">
+          <p className="text-sm md:text-base text-center">
             As we embark on this shared journey at Thennavan Stores, we want to lay out a few understandings that are
             the heart of our relationship. These are not just rules; they are the fibers that weave the tapestry of our
             community.
@@ -23,8 +23,7 @@ const TermsAndConditions = () => {
         </div>
       </div>
 
-      {/* Numbered List Section */}
-      <ol className="list-decimal list-inside mb-4 text-justify text-sm md:text-base space-y-2">
+      <ol className="list-decimal list-inside mb-4 text-justify text-sm md:text-base space-y-2 font-serif">
         <li>
           <strong>Quality Assurance:</strong> When you choose Thennavan, you're choosing products steeped in the
           dedication of farmers and artisans. We're committed to delivering a quality that speaks volumes. If, by any
@@ -63,12 +62,12 @@ const TermsAndConditions = () => {
         you, despite these limitations.
       </p>
 
-      <p className="text-sm md:text-base">
+      <p className="text-sm md:text-base text-justify">
         By choosing Thennavan, you are not just making a transaction; you are becoming part of a collective story. Our
         terms and conditions embody our commitment to building a community rooted in integrity, fairness, and compassion.
       </p>
 
-      <p className="text-sm md:text-base">
+      <p className="text-sm md:text-base text-justify">
         Thank you for being an integral part of the Thennavan family. Together, let's nurture a space where every
         interaction is grounded in empathy, understanding, and the shared warmth of a community that genuinely cares.
       </p>
