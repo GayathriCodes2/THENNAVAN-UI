@@ -6,8 +6,8 @@ import React from 'react';
 function page() {
   
   const products = [{
-    imageUrl: '/Ponni Rice.jpg',
-    heading: 'Ponni-Rice.jpg',
+    imageUrl: '/Ponni-Rice.jpg',
+    heading: 'Ponni Rice',
     price: '99.99',
     productUrl: '/fromfarmersproducts',
   },{
