@@ -6,14 +6,19 @@ const TermsAndConditions = () => {
         <div className="bg-white p-8">
             <h1 className="text-3xl font-bold mb-4 mx-auto text-center">Terms and Conditions - Our Collective Understanding</h1>
 
-            <div className="mb-8">
+            <div className="mb-8 flex">
                 {/* Image Section */}
                 <img src="/T&C-top-image.png" alt="Thennavan Stores" className="w-1/2 h-1/2 my-4" />
+                <div>
+                    <h1 className='font-bold text-2xl mx-auto text-center'>
+                        Dear Beloved Customers and Collaborators,
+                    </h1>
+                    <p>As we embark on this shared journey at Thennavan Stores, we want to lay out a few
+                        understandings that are the heart of our relationship. These are not just rules; they
+                        are the fibers that weave the tapestry of our community.
+                    </p>
+                </div>
             </div>
-
-            <p className="mb-8">
-                Dear Beloved Customers and Collaborators,
-            </p>
 
             {/* Numbered List Section */}
             <ol className="list-decimal list-inside mb-8">

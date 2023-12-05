@@ -80,7 +80,7 @@ Product Details: ${productDetails}
 
         <div>
 
-            <h2 className="text-2xl font-semibold mb-6 mx-auto">Sell with Us</h2>
+            <h2 className="text-2xl font-semibold mb-6 mx-auto text-center">Sell with Us</h2>
 
 
             <div className="grid w-full grid-cols-1 sm:grid-cols-2">
