@@ -85,7 +85,7 @@ Product Details: ${productDetails}
                 {/* Left side: Image */}
                 <div className="flex-col justify-center items-center">
                 <h2 className="text-2xl justify-items-center text-center font-semibold mb-2 mx-auto">Sell with Us</h2>
-                <p className="text-sm text-gray-700 justify-items-center text-center mb-6 mx-auto">"Let's Grow Together"</p>
+                <p className="text-sm text-gray-700 justify-items-center text-center mb-6 sm:mb-2 mx-auto">"Let's Grow Together"</p>
                     <img
                         src='/sell-with-us-image.png'
                         alt="Logo"
