@@ -78,156 +78,163 @@ Product Details: ${productDetails}
 
     return (
 
-        <div className="grid grid-cols-1 sm:grid-cols-2">
-        {/* Left side: Image */}
-        <div className="hidden sm:flex justify-end items-center">
-          <img
-            src='\8.jpg'
-            alt="Logo"
-            style={{ width: '100%', maxWidth: '500px' }}
-          />
+        <div>
+
+            <h2 className="text-2xl font-semibold mb-6 mx-auto">Sell with Us</h2>
+
+
+            <div className="grid w-full grid-cols-1 sm:grid-cols-2">
+
+                {/* Left side: Image */}
+                <div className="hidden sm:flex justify-center items-center">
+
+                    <img
+                        src='/sell-with-us-image.png'
+                        alt="Logo"
+                        style={{ width: '100%', maxWidth: '500px' }}
+                    />
+                </div>
+
+                {/* Right side: Form */}
+                <div className="max-w-xl mx-auto mt-8 p-6  shadow-md rounded-md w-full bg-white" style={{ outline: '2px solid #7d847d' }}>
+
+                    <form onSubmit={handleSubmit} target="_blank">
+                        <div className="mb-4">
+                            <label htmlFor="sellerName" className="block text-sm font-medium text-gray-600">
+                                Your Name <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="sellerName"
+                                name="sellerName"
+                                value={sellerName}
+                                onChange={(e) => setSellerName(e.target.value)}
+                                className="mt-1 p-2 w-full border rounded-md"
+                                required
+                            />
+                        </div>
+
+
+
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="mb-4">
+                                <label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-600">
+                                    Mobile Number (10 digits only) <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="mobileNumber"
+                                    name="mobileNumber"
+                                    value={mobileNumber}
+                                    onChange={handleMobileNumberChange}
+                                    className="mt-1 p-2 w-full border rounded-md"
+                                    required
+                                />
+                            </div>
+
+                            <div className="mb-4">
+                                <label htmlFor="sellerEmail" className="block text-sm font-medium text-gray-600">
+                                    Your Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="sellerEmail"
+                                    name="sellerEmail"
+                                    value={sellerEmail}
+                                    onChange={handleEmailChange}
+                                    className="mt-1 p-2 w-full border rounded-md"
+                                />
+                            </div>
+
+
+                        </div>
+
+                        <div className="mb-4">
+                            <label htmlFor="address" className="block text-sm font-medium text-gray-600">
+                                Address <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="address"
+                                name="address"
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                className="mt-1 p-2 w-full border rounded-md"
+                                required
+                            />
+                        </div>
+
+                        <div className="mb-4">
+                            <label htmlFor="pincode" className="block text-sm font-medium text-gray-600">
+                                Pin Code <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="pincode"
+                                name="pincode"
+                                value={pincode}
+                                className="mt-1 p-2 w-full border rounded-md"
+                                onChange={handlePincodeChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="mb-4">
+                                <label htmlFor="district" className="block text-sm font-medium text-gray-600">
+                                    District <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="district"
+                                    name="district"
+                                    value={district}
+                                    onChange={(e) => setDistrict(e.target.value)}
+                                    className="mt-1 p-2 w-full border rounded-md"
+                                    required
+                                />
+                            </div>
+
+                            <div className="mb-4">
+                                <label htmlFor="state" className="block text-sm font-medium text-gray-600">
+                                    State <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="state"
+                                    name="state"
+                                    value={state}
+                                    onChange={(e) => setState(e.target.value)}
+                                    className="mt-1 p-2 w-full border rounded-md"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div className="mb-4">
+                            <label htmlFor="productDetails" className="block text-sm font-medium text-gray-600">
+                                Product Details <span className="text-red-500">*</span>
+                            </label>
+                            <textarea
+                                id="productDetails"
+                                name="productDetails"
+                                value={productDetails}
+                                onChange={(e) => setProductDetails(e.target.value)}
+                                className="mt-1 p-2 w-full border rounded-md"
+                                rows="4"
+                                required
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="border-black w-full border bg-black text-white my-3 hover:bg-white hover:text-black transition-all font-bold py-2 px-4 rounded">
+                            Proceed
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-  
-        {/* Right side: Form */}
-        <div className="max-w-xl mx-auto mt-8 p-6  shadow-md rounded-md w-full bg-white" style={{ outline: '2px solid #7d847d' }}>
-          <h2 className="text-2xl font-semibold mb-6 mx-auto">Sell with Us</h2>
-
-          <form onSubmit={handleSubmit} target="_blank">
-    <div className="mb-4">
-        <label htmlFor="sellerName" className="block text-sm font-medium text-gray-600">
-            Your Name <span className="text-red-500">*</span>
-        </label>
-        <input
-            type="text"
-            id="sellerName"
-            name="sellerName"
-            value={sellerName}
-            onChange={(e) => setSellerName(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
-            required
-        />
-    </div>
-
-    
-
-    <div className="grid grid-cols-2 gap-4">
-        <div className="mb-4">
-            <label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-600">
-                Mobile Number (10 digits only) <span className="text-red-500">*</span>
-            </label>
-            <input
-                type="tel"
-                id="mobileNumber"
-                name="mobileNumber"
-                value={mobileNumber}
-                onChange={handleMobileNumberChange}
-                className="mt-1 p-2 w-full border rounded-md"
-                required
-            />
-        </div>
-
-        <div className="mb-4">
-        <label htmlFor="sellerEmail" className="block text-sm font-medium text-gray-600">
-            Your Email
-        </label>
-        <input
-            type="email"
-            id="sellerEmail"
-            name="sellerEmail"
-            value={sellerEmail}
-            onChange={handleEmailChange}
-            className="mt-1 p-2 w-full border rounded-md"
-        />
-    </div>
-
-       
-    </div>
-
-    <div className="mb-4">
-        <label htmlFor="address" className="block text-sm font-medium text-gray-600">
-            Address <span className="text-red-500">*</span>
-        </label>
-        <input
-            type="text"
-            id="address"
-            name="address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
-            required
-        />
-    </div>
-
-    <div className="mb-4">
-            <label htmlFor="pincode" className="block text-sm font-medium text-gray-600">
-                Pin Code <span className="text-red-500">*</span>
-            </label>
-            <input
-                type="text"
-                id="pincode"
-                name="pincode"
-                value={pincode}
-                className="mt-1 p-2 w-full border rounded-md"
-                onChange={handlePincodeChange}
-                required
-            />
-        </div>
-
-    <div className="grid grid-cols-2 gap-4">
-        <div className="mb-4">
-            <label htmlFor="district" className="block text-sm font-medium text-gray-600">
-                District <span className="text-red-500">*</span>
-            </label>
-            <input
-                type="text"
-                id="district"
-                name="district"
-                value={district}
-                onChange={(e) => setDistrict(e.target.value)}
-                className="mt-1 p-2 w-full border rounded-md"
-                required
-            />
-        </div>
-
-        <div className="mb-4">
-            <label htmlFor="state" className="block text-sm font-medium text-gray-600">
-                State <span className="text-red-500">*</span>
-            </label>
-            <input
-                type="text"
-                id="state"
-                name="state"
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                className="mt-1 p-2 w-full border rounded-md"
-                required
-            />
-        </div>
-    </div>
-
-    <div className="mb-4">
-        <label htmlFor="productDetails" className="block text-sm font-medium text-gray-600">
-            Product Details <span className="text-red-500">*</span>
-        </label>
-        <textarea
-            id="productDetails"
-            name="productDetails"
-            value={productDetails}
-            onChange={(e) => setProductDetails(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
-            rows="4"
-            required
-        />
-    </div>
-
-    <button
-        type="submit"
-        className="border-black w-full border bg-black text-white my-3 hover:bg-white hover:text-black transition-all font-bold py-2 px-4 rounded">
-        Proceed
-    </button>
-</form>
-
-        </div></div>
     );
 };
 
