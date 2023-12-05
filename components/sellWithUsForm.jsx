@@ -9,6 +9,7 @@ const SellWithUsForm = () => {
     const [address, setAddress] = useState('');
     const [district, setDistrict] = useState('');
     const [state, setState] = useState('');
+    const [city, setCity] = useState('');
     const [pincode, setPincode] = useState('');
     const [productDetails, setProductDetails] = useState('');
 
@@ -53,9 +54,10 @@ Name: ${sellerName}
 Email: ${sellerEmail}
 Mobile Number: ${mobileNumber}
 Address: ${address}
+City: ${city}
+Pin Code: ${pincode}
 District: ${district}
 State: ${state}
-Pin Code: ${pincode}
 Product Details: ${productDetails}
 `;
 
@@ -72,31 +74,28 @@ Product Details: ${productDetails}
         setAddress('');
         setDistrict('');
         setState('');
+        setCity('');
         setPincode('');
         setProductDetails('');
     };
 
     return (
-
-        <div>
-
-            <h2 className="text-2xl font-semibold mb-6 mx-auto">Sell with Us</h2>
-
-
             <div className="grid w-full grid-cols-1 sm:grid-cols-2">
 
                 {/* Left side: Image */}
-                <div className="hidden sm:flex justify-center items-center">
-
+                <div className="flex-col justify-center items-center">
+                <h2 className="text-2xl justify-items-center text-center font-semibold mb-2 mx-auto">Sell with Us</h2>
+                <p className="text-sm text-gray-700 justify-items-center text-center mb-6 mx-auto">"Let's Grow Together"</p>
                     <img
                         src='/sell-with-us-image.png'
                         alt="Logo"
                         style={{ width: '100%', maxWidth: '500px' }}
+                        className='mx-auto mt-28'
                     />
                 </div>
 
                 {/* Right side: Form */}
-                <div className="max-w-xl mx-auto mt-8 p-6  shadow-md rounded-md w-full bg-white" style={{ outline: '2px solid #7d847d' }}>
+                <div className="max-w-xl mx-auto p-6  shadow-2xl rounded-md w-full bg-white">
 
                     <form onSubmit={handleSubmit} target="_blank">
                         <div className="mb-4">
@@ -145,8 +144,6 @@ Product Details: ${productDetails}
                                     className="mt-1 p-2 w-full border rounded-md"
                                 />
                             </div>
-
-
                         </div>
 
                         <div className="mb-4">
@@ -164,6 +161,22 @@ Product Details: ${productDetails}
                             />
                         </div>
 
+                        <div className="grid grid-cols-2 gap-4">
+                        <div className="mb-4">
+                            <label htmlFor="city" className="block text-sm font-medium text-gray-600">
+                                City <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                value={city}
+                                className="mt-1 p-2 w-full border rounded-md"
+                                onChange={(e) => setCity(e.target.value)}
+                                required
+                            />
+                        </div>
+
                         <div className="mb-4">
                             <label htmlFor="pincode" className="block text-sm font-medium text-gray-600">
                                 Pin Code <span className="text-red-500">*</span>
@@ -177,6 +190,8 @@ Product Details: ${productDetails}
                                 onChange={handlePincodeChange}
                                 required
                             />
+                        </div>
+
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">
@@ -221,7 +236,7 @@ Product Details: ${productDetails}
                                 value={productDetails}
                                 onChange={(e) => setProductDetails(e.target.value)}
                                 className="mt-1 p-2 w-full border rounded-md"
-                                rows="4"
+                                rows="3"
                                 required
                             />
                         </div>
@@ -234,7 +249,6 @@ Product Details: ${productDetails}
                     </form>
                 </div>
             </div>
-        </div>
     );
 };
 
