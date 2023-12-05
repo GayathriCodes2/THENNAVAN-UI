@@ -55,8 +55,8 @@ const Header = () => {
             {/* Navigation Menu (Mobile) */}
             {isMobileMenuOpen && (
                 <div className="md:hidden flex flex-col items-center space-y-2">
-                    <a href="/our-cultivated-products" className="nav-link  hover:bg-green-500 transition-all p-2">Our Harvested Goods</a>
-                    <a href="/famous-products" className="nav-link  hover:bg-green-500 transition-all p-2">Signature Local Delicacies</a>
+                    <a href="/tasteofourlandproducts" className="nav-link  hover:bg-green-500 transition-all p-2">Signature Local Delicacies</a>
+                    <a href="/fromfarmersproducts" className="nav-link  hover:bg-green-500 transition-all p-2">Our Harvested Goods</a>
                     <a href="/sellwithus" className="nav-link  hover:bg-green-500 transition-all p-2">Sell With Us</a>
                     <a href="/about-us" className="nav-link hover:bg-green-500 transition-all p-2">About Us</a>
                 </div>

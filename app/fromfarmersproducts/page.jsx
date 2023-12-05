@@ -6,46 +6,45 @@ const products = [
   {
     id: 1,
     imageUrl: '/Ponni-Rice.jpg',
-    heading: 'Product 1',
+    heading: 'Ponni Rice',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: "https://wa.me/9092993545?text=I'm%20interested%20in%20your%20product%20for%20sale",
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Ponni%20Rice%20with",
   },{
-    id: 1,
+    id: 2,
     imageUrl: '/Black-gram.jpg',
-    heading: 'Product 1',
+    heading: 'Black Gram',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: 'https://example.com/buy/product1',
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Black%20Gram%20with",
   },{
-    id: 1,
+    id: 3,
     imageUrl: '/Henna-Powder.jpg',
-    heading: 'Product 1',
+    heading: 'Henna Powder',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: 'https://example.com/buy/product1',
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Henna%20Powder%20with",
   },{
-    id: 1,
+    id: 4,
     imageUrl: '/Neem-Powder.jpg',
-    heading: 'Product 1',
+    heading: 'Neem Powder',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: 'https://example.com/buy/product1',
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Neem%20Powder%20with",
   },{
-    id: 1,
+    id: 5,
     imageUrl: '/Curry-Leaves-Powder.jpg',
-    heading: 'Product 1',
+    heading: 'Curry Leaves Powder',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: 'https://example.com/buy/product1',
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Curry%20Leaves%20Powder%20with",
   },{
-    id: 1,
+    id: 6,
     imageUrl: '/Moringa-Powder.jpg',
-    heading: 'Product 1',
+    heading: 'Moringa Powder',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: 'https://example.com/buy/product1',
-  },
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Moringa%20Powder%20with",  },
 
 ];
 
@@ -53,7 +52,7 @@ const Page = () => {
   return (
     <div>
       <h1 className="text-2xl font-semibold my-4">From Farmers</h1>
-      <img src='/From-Farmers-All-Product-page-image.png' alt="Leelavathi" className="h-96 w-96 mx-auto" />
+      <img src='/From-Farmers-All-Product-page-image.png' alt="Leelavathi" className="h-96 w-96 lg:hidden mx-auto" />
       {products.map((product) => (
         <ProductCard key={product.id} {...product} />
       ))}

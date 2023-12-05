@@ -7,7 +7,7 @@ function page() {
   
   const products = [{
     imageUrl: '/Ponni Rice.jpg',
-    heading: 'Ponni-Rice',
+    heading: 'Ponni-Rice.jpg',
     price: '99.99',
     productUrl: '/fromfarmersproducts',
   },{

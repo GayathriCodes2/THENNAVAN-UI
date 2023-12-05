@@ -6,31 +6,31 @@ const products = [
   {
     id: 1,
     imageUrl: '/Tirunelveli-Halwa.jpg',
-    heading: 'Product 1',
+    heading: 'Tirunelveli - Halwa',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: "https://wa.me/9092993545?text=I'm%20interested%20in%20your%20product%20for%20sale",
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Tirunelveli%20Halwa%20with",
   }, {
-    id: 1,
+    id: 2,
     imageUrl: '/Thoothukudi-Macaroons.jpg',
-    heading: 'Product 1',
+    heading: 'Thoothukudi - Macaroons',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: 'https://example.com/buy/product1',
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Thoothukudi%20Macaroons%20with",
   }, {
-    id: 1,
+    id: 3,
     imageUrl: '/Peanut-candy.jpg',
-    heading: 'Product 1',
+    heading: 'Kovilpatti - Kadalai mittai',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: 'https://example.com/buy/product1',
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Peanut%20Candy%20with",
   }, {
-    id: 1,
+    id: 4,
     imageUrl: '/Banana-chips.jpg',
-    heading: 'Product 1',
+    heading: 'Nagercoil - Chips',
     description: 'Description for Product 1',
     price: 19.99,
-    buyNowLink: 'https://example.com/buy/product1',
+    buyNowLink: "https://wa.me/9092993545?text=Need%20Banana%20Chips%20with",
   }
 ];
 
