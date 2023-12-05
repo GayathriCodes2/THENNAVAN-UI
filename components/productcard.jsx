@@ -26,7 +26,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink }) => {
     <div className="flex border p-2">
       {/* Left side: Image */}
       <div>
-      <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-64 w-32 lg:h-64 h-36 object-cover" />
+      <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-64 w-28 lg:h-64 h-32 object-cover" />
       </div>
 
       {/* Middle part: Heading, Description, and Dropdown */}
@@ -51,7 +51,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink }) => {
 
       {/* Right side: Price and Buy Now button */}
       <div className="flex flex-col items-end">
-        <p className="text-lg font-semibold">Rs.{price}</p>
+        <p className="sm:text-lg text-sm font-semibold">Rs.{price}</p>
         <button
           className="w-full px-1 my-3 lg:px-2 py-2 bg-white border-green-500 text-green-500 rounded-md focus:outline-none border hover:bg-green-500 hover:text-white transition duration-300 ease-in-out text-sm sm:text-xs"
           onClick={handlePreBookClick}

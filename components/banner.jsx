@@ -19,7 +19,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Change slide every 2 seconds
+    }, 2000); // Change slide every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -62,8 +62,8 @@ const Carousel = () => {
           <button
             key={index}
             type="button"
-            className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? 'bg-gray-500' : 'bg-gray-300'
+            className={`w-2 h-2 sm:h-3 sm:w-3 rounded-full ${
+              index === currentIndex ? 'bg-white' : 'bg-gray-300'
             }`}
             aria-current={index === currentIndex}
             aria-label={`Slide ${index + 1}`}
