@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
 const TermsAndConditions = () => {
@@ -23,7 +24,7 @@ const TermsAndConditions = () => {
       </div>
 
       {/* Numbered List Section */}
-      <ol className="list-decimal list-inside mb-4 text-sm md:text-base space-y-2">
+      <ol className="list-decimal list-inside mb-4 text-justify text-sm md:text-base space-y-2">
         <li>
           <strong>Quality Assurance:</strong> When you choose Thennavan, you're choosing products steeped in the
           dedication of farmers and artisans. We're committed to delivering a quality that speaks volumes. If, by any
@@ -56,7 +57,7 @@ const TermsAndConditions = () => {
         </li>
       </ol>
 
-      <p className="text-sm md:text-base">
+      <p className="text-sm md:text-base text-justify">
         Now, a gentle reminder - at this juncture, we currently do not have a return policy, and cash on delivery is
         not an available option. We appreciate your understanding as we work towards creating the best experience for
         you, despite these limitations.
