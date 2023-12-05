@@ -90,7 +90,7 @@ Product Details: ${productDetails}
                         src='/sell-with-us-image.png'
                         alt="Logo"
                         style={{ width: '100%', maxWidth: '500px' }}
-                        className='mx-auto mt-28'
+                        className='mx-auto mt-28 sm:mt-3'
                     />
                 </div>
 
