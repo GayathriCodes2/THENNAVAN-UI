@@ -6,26 +6,26 @@ import React from 'react';
 function page() {
   
   const products = [{
-    imageUrl: '/22.jpg',
-    heading: 'Product Name',
+    imageUrl: '/Ponni Rice.jpg',
+    heading: 'Ponni-Rice',
     price: '99.99',
     productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: '/22.jpg',
-    heading: 'Product Name',
+    imageUrl: '/Black-gram.jpg',
+    heading: 'Black gram',
     price: '99.99',
     productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: '/22.jpg',
-    heading: 'Product Name',
+    imageUrl: '/Henna-Powder.jpg',
+    heading: 'Henna Powder',
     price: '99.99',
     productUrl: '/fromfarmersproducts',
   },{
-    imageUrl: '/22.jpg',
-    heading: 'Product Name',
+    imageUrl: '/Neem-Powder.jpg',
+    heading: 'Neem Powder',
     price: '99.99',
     productUrl: '/fromfarmersproducts',
-  },
+  }
 ];
 
 const tastyProducts = [{
@@ -45,7 +45,7 @@ const tastyProducts = [{
   heading: 'Nagercoil - Chips',
   productUrl: '/tasteofourlandproducts',
 },
-];
+]; 
 
   return (
     <div>
