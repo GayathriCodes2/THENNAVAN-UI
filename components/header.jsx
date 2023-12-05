@@ -18,7 +18,7 @@ const Header = () => {
             {/* Navigation Menu (Desktop) */}
             <div className="flex items-center space-x-4">
                 <nav className="hidden md:flex items-center space-x-4 ml-auto ">
-                    <a href="/about-us" className="nav-link hover:bg-green-500 transition-all rounded p-2">About-us</a>
+                    <a href="/about-us" className="nav-link hover:bg-green-500 transition-all rounded p-2">About Us</a>
                     <a href="/sellwithus" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Sell With Us</a>
                     <a href="/our-cultivated-products" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Our Harvested Goods</a>
                     <a href="/famous-products" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Signature Local Delicacies</a>
