@@ -32,7 +32,7 @@ const ProductCard = ({ imageUrl, heading, description, buyNowLink, weightOptions
   return (
     <div className="flex border p-2">
       <div>
-        <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-64 w-28 lg:h-64 h-32 object-cover" />
+        <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-52 w-28 lg:h-52 h-32 object-cover" />
       </div>
 
       <div className="flex-grow lg:mx-4 mx-1">
