@@ -1,5 +1,4 @@
 // pages/index.js
-
 import ProductCard from "@components/productcard";
 
 const products = [
@@ -8,44 +7,79 @@ const products = [
     imageUrl: '/Ponni-Rice.jpg',
     heading: 'Ponni Rice',
     description: 'Description for Product 1',
-    price: 19.99,
-    buyNowLink: "https://wa.me/9092993545?text=Need%20Ponni%20Rice%20with",
-  },{
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
+    buyNowLink: "https://wa.me/9092993545?text=Need",
+    weightOptions: [
+      { label: '1 kg', value: '1kg' },
+      { label: '2 kg', value: '2kg' },
+      { label: '4 kg', value: '4kg' },
+    ],
+  },
+  {
     id: 2,
     imageUrl: '/Black-gram.jpg',
     heading: 'Black Gram',
-    description: 'Description for Product 1',
-    price: 19.99,
-    buyNowLink: "https://wa.me/9092993545?text=Need%20Black%20Gram%20with",
-  },{
+    description: 'Description for Black Gram',
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
+    buyNowLink: "https://wa.me/9092993545?text=Need",
+    weightOptions: [
+      { label: '1 kg', value: '1kg' },
+      { label: '2 kg', value: '2kg' },
+      { label: '4 kg', value: '4kg' },
+    ],
+  },
+  {
     id: 3,
     imageUrl: '/Henna-Powder.jpg',
     heading: 'Henna Powder',
-    description: 'Description for Product 1',
-    price: 19.99,
-    buyNowLink: "https://wa.me/9092993545?text=Need%20Henna%20Powder%20with",
-  },{
+    description: 'Description for Henna Powder',
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
+    buyNowLink: "https://wa.me/9092993545?text=Need",
+    weightOptions: [
+      { label: '1 kg', value: '1kg' },
+      { label: '2 kg', value: '2kg' },
+      { label: '4 kg', value: '4kg' },
+    ],
+  },
+  {
     id: 4,
     imageUrl: '/Neem-Powder.jpg',
     heading: 'Neem Powder',
-    description: 'Description for Product 1',
-    price: 19.99,
-    buyNowLink: "https://wa.me/9092993545?text=Need%20Neem%20Powder%20with",
-  },{
+    description: 'Description for Neem Powder',
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
+    buyNowLink: "https://wa.me/9092993545?text=Need",
+    weightOptions: [
+      { label: '1 kg', value: '1kg' },
+      { label: '2 kg', value: '2kg' },
+      { label: '4 kg', value: '4kg' },
+    ],
+  },
+  {
     id: 5,
     imageUrl: '/Curry-Leaves-Powder.jpg',
     heading: 'Curry Leaves Powder',
-    description: 'Description for Product 1',
-    price: 19.99,
-    buyNowLink: "https://wa.me/9092993545?text=Need%20Curry%20Leaves%20Powder%20with",
-  },{
+    description: 'Description for Curry Leaves Powder',
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
+    buyNowLink: "https://wa.me/9092993545?text=Need",
+    weightOptions: [
+      { label: '1 kg', value: '1kg' },
+      { label: '2 kg', value: '2kg' },
+      { label: '4 kg', value: '4kg' },
+    ],
+  },
+  {
     id: 6,
     imageUrl: '/Moringa-Powder.jpg',
     heading: 'Moringa Powder',
-    description: 'Description for Product 1',
-    price: 19.99,
-    buyNowLink: "https://wa.me/9092993545?text=Need%20Moringa%20Powder%20with",  },
-
+    description: 'Description for Moringa Powder',
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
+    buyNowLink: "https://wa.me/9092993545?text=Need",
+    weightOptions: [
+      { label: '1 kg', value: '1kg' },
+      { label: '2 kg', value: '2kg' },
+      { label: '4 kg', value: '4kg' },
+    ],
+  },
 ];
 
 const Page = () => {
