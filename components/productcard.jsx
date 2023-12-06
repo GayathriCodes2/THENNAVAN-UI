@@ -27,7 +27,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weight
         <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-64 w-28 lg:h-64 h-32 object-cover" />
       </div>
       <div className="flex-grow lg:mx-4 mx-1">
-        <h4 className="lg:text-lg text-lg uppercase">{heading}</h4>
+        <h4 className="lg:text-lg text-xs uppercase">{heading}</h4>
         <p className="text-gray-600 text-sm ml-1">{description}</p>
         <label htmlFor="weight" className="mt-2 text-sm text-gray-500">Select Kg:</label>
         <select
