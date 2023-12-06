@@ -1,8 +1,15 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weightOptions }) => {
-  const [selectedWeight, setSelectedWeight] = useState(weightOptions[0]?.value);
+  const [selectedWeight, setSelectedWeight] = useState('');
+
+  useEffect(() => {
+    // Set selectedWeight to the first available option when weightOptions is not empty
+    if (weightOptions && weightOptions.length > 0) {
+      setSelectedWeight(weightOptions[0].value);
+    }
+  }, [weightOptions]);
 
   const handleWeightChange = (event) => {
     setSelectedWeight(event.target.value);
@@ -30,7 +37,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weight
           value={selectedWeight}
           onChange={handleWeightChange}
         >
-          {weightOptions.map((option) => (
+          {weightOptions && weightOptions.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
