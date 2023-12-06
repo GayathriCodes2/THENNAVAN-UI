@@ -27,13 +27,13 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weight
         <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-64 w-28 lg:h-64 h-32 object-cover" />
       </div>
       <div className="flex-grow lg:mx-4 mx-1">
-        <h4 className="lg:text-xl text-xs font-semibold">{heading}</h4>
-        <p className="text-gray-600 text-sm lg:text-xl">{description}</p>
-        <label htmlFor="weight" className="block mt-2 text-sm text-gray-500">Select Kg:</label>
+        <h4 className="lg:text-lg text-lg uppercase">{heading}</h4>
+        <p className="text-gray-600 text-sm ml-1">{description}</p>
+        <label htmlFor="weight" className="mt-2 text-sm text-gray-500">Select Kg:</label>
         <select
           id="weight"
           name="weight"
-          className="mt-1 p-2 w-24 border rounded-md"
+          className="mt-1 p-2 w-20 ml-2 border rounded-md"
           value={selectedWeight}
           onChange={handleWeightChange}
         >
@@ -45,9 +45,9 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weight
         </select>
       </div>
       <div className="flex flex-col items-end">
-        <p className="sm:text-lg text-sm font-semibold">Rs.{price[selectedWeight]}</p>
+        <p className="sm:text-lg text-sm">Rs.{price[selectedWeight]}</p>
         <button
-          className="w-full lg:px-1 my-3 px-2 py-1 bg-white border-green-500 text-green-500 rounded-md focus:outline-none border hover:bg-green-500 hover:text-white transition duration-300 ease-in-out sm:text-sm text-xs"
+          className="w-full px-1 my-3 lg:px-2 py-2 bg-white border-green-500 text-green-500 rounded-md focus:outline-none border hover:bg-green-500 hover:text-white transition duration-300 ease-in-out text-sm sm:text-xs"
           onClick={handlePreBookClick}
         >
           Pre Book
