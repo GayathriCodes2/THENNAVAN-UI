@@ -180,7 +180,7 @@ const Page = () => {
   return (
     <div>
       <h1 className="text-2xl font-semibold my-4">From Farmers</h1>
-      <img src='/From-Farmers-All-Product-page-image.png' alt="Leelavathi" className="h-96 w-96 lg:hidden mx-auto" />
+      <img src='/download-removebg-preview.png' alt="Temple Image" className="h-96 w-96 lg:hidden mx-auto" />
       {products.map((product) => (
         <ProductCard key={product.id} {...product} />
       ))}
