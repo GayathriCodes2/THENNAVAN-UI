@@ -70,7 +70,7 @@ const products = [
     ],
   },{
     id: 6,
-    imageUrl: '/Seydunganallor-Mixture.png',
+    imageUrl: '/Seydubganallor-Mixture.png',
     heading: 'Seydunganallor - Mixture',
     description: 'Description for Product 1',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
