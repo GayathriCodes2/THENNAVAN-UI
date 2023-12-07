@@ -53,7 +53,7 @@ function page() {
     productUrl: '/loveofourladies',
   }, {
     imageUrl: '/CircularFiberHamper.jpeg',
-    heading: 'Circular Fiber Hamper Basket',
+    heading: 'Circular Banana Fiber Basket',
     productUrl: '/loveofourladies',
   }, {
     imageUrl: '/FruitandVegBasket.jpeg',
@@ -61,7 +61,7 @@ function page() {
     productUrl: '/loveofourladies',
   }, {
     imageUrl: '/FruitAndVegBasketWithHandle-removebg-preview.png',
-    heading: 'Fruit/Vegetable Holder Banana Fibre Basket with Handle',
+    heading: 'Fruit/Vegetable Holder Handmade Basket with Handle',
     productUrl: '/loveofourladies',
   },];
 
