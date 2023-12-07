@@ -48,20 +48,20 @@ function page() {
   ];
 
   const LoveableProducts = [{
-    imageUrl: '/Tirunelveli-Halwa.jpg',
-    heading: 'Tirunelveli - Halwa',
+    imageUrl: '/CircularDecorativeBasket.jpeg',
+    heading: 'Circular Decorative Banana Fibre Basket',
     productUrl: '/loveofourladies',
   }, {
-    imageUrl: '/Thoothukudi-Macaroons.jpg',
-    heading: 'Thoothukudi - Macaroons',
+    imageUrl: '/CircularFiberHamper.jpeg',
+    heading: 'Circular Fiber Hamper Basket',
     productUrl: '/loveofourladies',
   }, {
-    imageUrl: '/Peanut-candy.jpg',
-    heading: 'Kovilpatti - Kadalai mittai',
+    imageUrl: '/FruitandVegBasket.jpeg',
+    heading: "Fruit/Vegetable Holder Banana Fibre Basket",
     productUrl: '/loveofourladies',
   }, {
-    imageUrl: '/Banana-chips.jpg',
-    heading: 'Nagercoil - Chips',
+    imageUrl: '/FruitAndVegBasketWithHandle-removebg-preview.png',
+    heading: 'Fruit/Vegetable Holder Banana Fibre Basket with Handle',
     productUrl: '/loveofourladies',
   },];
 
@@ -107,7 +107,7 @@ function page() {
         text="Love of our Ladies"
         path="/loveofourladies"
         ButtonContent="See More"
-        imageUrl="/taste-of-land.png"
+        imageUrl="/lady.png"
         altText="Love Logo"
       />
 
