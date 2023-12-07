@@ -57,7 +57,7 @@ const tastyProducts = [{
         text="From Farmers"
         path="/fromfarmersproducts"
         ButtonContent="See More"
-        imageUrl="/9.png"
+        imageUrl="/from-farmers.png"
         altText="Farmer Logo"
       />
     
@@ -74,7 +74,7 @@ const tastyProducts = [{
         text="Taste of our land"
         path="/tasteofourlandproducts"
         ButtonContent="See More"
-        imageUrl="/9.png"
+        imageUrl="/taste-of-land.png"
         altText="Taste Logo"
       />
 

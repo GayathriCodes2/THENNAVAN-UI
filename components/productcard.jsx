@@ -24,16 +24,16 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weight
   return (
     <div className="flex border p-2">
       <div>
-        <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-64 w-28 lg:h-64 h-32 object-cover" />
+        <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-32 rounded-xl w-28 lg:h-32 h-32 object-cover" />
       </div>
       <div className="flex-grow lg:mx-4 mx-1">
-        <h4 className="lg:text-lg text-xs uppercase">{heading}</h4>
-        <p className="text-gray-600 text-sm ml-1">{description}</p>
+        <h4 className="lg:text-lg text-xs">{heading}</h4>
+        <p className="text-gray-600 sm:text-sm text-xs ml-1">{description}</p>
         <label htmlFor="weight" className="mt-2 text-sm text-gray-500">Select Kg:</label>
         <select
           id="weight"
           name="weight"
-          className="mt-1 p-2 w-20 ml-2 border rounded-md"
+          className="mt-1 p-2 w-auto sm:p-1  ml-2 border rounded-md"
           value={selectedWeight}
           onChange={handleWeightChange}
         >

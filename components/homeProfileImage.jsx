@@ -10,12 +10,12 @@ const HomeProfileImage = ({ text, path, ButtonContent, imageUrl, altText }) => {
         <img
           src={imageUrl}
           alt={altText}
-          className="mr-4 w-9 h-9 md:w-16 md:h-16 lg:w-20 lg:h-20 object-cover rounded-full"
+          className="mr-4 w-9 h-9 md:w-16 md:h-16 lg:w-32 lg:h-32 object-cover shadow-2xl outline rounded-full"
         />
       )}
 
 
-<h3 className="lg:text-xl text-sm font-semibold mb-2 lg:mt-6 mt-2 uppercase">{text}</h3>
+<h3 className="lg:text-xl text-sm font-semibold mb-2 lg:mt-12 mt-2 uppercase">{text}</h3>
 
 
 </div>
