@@ -15,7 +15,7 @@ const HomeProfileImage = ({ text, path, ButtonContent, imageUrl, altText }) => {
       )}
 
 
-<h3 className="lg:text-xl text-sm font-semibold mb-2 lg:mt-10 mt-2 uppercase">{text}</h3>
+<h3 className="lg:text-xl text-sm font-semibold mb-2 lg:mt-9 mt-2 uppercase">{text}</h3>
 
 
 </div>
