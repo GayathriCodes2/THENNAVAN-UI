@@ -10,7 +10,7 @@ const HomeProfileImage = ({ text, path, ButtonContent, imageUrl, altText }) => {
         <img
           src={imageUrl}
           alt={altText}
-          className="mr-4 w-9 h-9 md:w-16 md:h-16 lg:w-32 lg:h-32 object-cover shadow-2xl outline rounded-full"
+          className="mr-4 w-9 h-9 md:w-16 md:h-16 lg:w-24 lg:h-24 object-cover shadow-2xl outline rounded-full"
         />
       )}
 
