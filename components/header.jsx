@@ -10,7 +10,7 @@ const Header = () => {
             {/* Logo and Navigation Menu (Desktop) */}
             <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                    <img src="/cultivate.png" alt="Logo" className="h-8 w-8" />
+                    <img src="/cultivate.png" alt="Logo" className="h-8 w-8"/>
                     <span className="text-lg font-bold">Thennavan</span>
                 </div>
             </div>
@@ -20,6 +20,7 @@ const Header = () => {
                 <nav className="hidden md:flex items-center space-x-4 ml-auto ">
                     <a href="/fromfarmersproducts" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Our Harvested Goods</a>
                     <a href="/tasteofourlandproducts" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Signature Local Delicacies</a>
+                    <a href="/loveofourladies" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Love of Our ladies</a>
                     <a href="/sellwithus" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Sell With Us</a>
                     <a href="/about-us" className="nav-link hover:bg-green-500 transition-all rounded p-2">About Us</a>
                 </nav>

@@ -41,9 +41,22 @@ const products = [
       { label: '2 kg', value: '2kg' },
       { label: '4 kg', value: '4kg' },
     ],
-  },
+  }, 
   {
     id: 4,
+    imageUrl: '/Honey.png',
+    heading: 'Organic Honey',
+    description: 'Description forOrganic Honey',
+    price: { '500ml': 19.99, '1liter': 29.99, '2liter': 39.99 },
+    buyNowLink: "https://wa.me/9092993545?text=Need",
+    weightOptions: [
+      { label: '500 ml', value: '500ml' },
+      { label: '1 liter', value: '1liter' },
+      { label: '2 liter', value: '2liter' },
+    ],
+  },
+  {
+    id: 5,
     imageUrl: '/Neem-Powder.jpg',
     heading: 'Neem Powder',
     description: 'Description for Neem Powder',
@@ -56,7 +69,7 @@ const products = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     imageUrl: '/Curry-Leaves-Powder.jpg',
     heading: 'Curry Leaves Powder',
     description: 'Description for Curry Leaves Powder',
@@ -69,7 +82,7 @@ const products = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     imageUrl: '/Moringa-Powder.jpg',
     heading: 'Moringa Powder',
     description: 'Description for Moringa Powder',
