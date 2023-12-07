@@ -17,6 +17,8 @@ const AboutUs = () => {
         />
         <div className="text-center md:text-left">
           <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Thennavan - "A Farmer's Heartbeat"</h2>
+          
+
           <p className="text-sm md:text-lg">
             Embark on a heartfelt journey where farming isn't just a job but a passion. I'm Leelavathi, a single mother farmer from Tirunelveli, Tamil Nadu.
           </p>
@@ -31,6 +33,7 @@ const AboutUs = () => {
       <div className="flex flex-col md:flex-row items-center justify-center mb-4 md:mb-8">
         <div className="text-center md:text-left">
           <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Thennavan - "Empowering Farmers"</h2>
+          <h6 className="text-xs md:text-xs text-gray-700 mb-2 md:mb-4">"Bloom our south Farmers"</h6>
           <p className="text-sm md:text-lg">
             In the fields of Tirunelveli, where dreams are sown like seeds, Thennavan is a beacon of hope. This store isn't just a marketplace; it's a dream shared by farmers like me who tend the land solo.
           </p>
@@ -55,6 +58,8 @@ const AboutUs = () => {
         />
         <div className="text-center md:text-left">
           <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Taste of Our Land - "Savor the South"</h2>
+          <h6 className="text-xs md:text-xs text-gray-700 mb-2 md:mb-4">"Taste our south signature"</h6>
+
           <p className="text-sm md:text-lg">
             Indulge in the flavors that define South Tamil Nadu. "Taste of Our Land" is a celebration of our heritage, from the sweet Tirunelveli Halwa to the crunchy Nagerkoil banana chips.
           </p>
@@ -69,6 +74,7 @@ const AboutUs = () => {
       <div className="flex flex-col md:flex-row items-center justify-center mb-4 md:mb-8">
         <div className="text-center md:text-left">
           <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Sell with Us - "Growing Together"</h2>
+          
           <p className="text-sm md:text-lg">
             At Thennavan Stores, "Sell with Us" isn't just an option; it's an invitation to share your story with our community. It's like creating music together, where your hard work harmonizes with the efforts of farmers working towards a fairer, more equal future.
           </p>
