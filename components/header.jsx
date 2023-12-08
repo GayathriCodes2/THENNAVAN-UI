@@ -10,7 +10,7 @@ const Header = () => {
             {/* Logo and Navigation Menu (Desktop) */}
             <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                    <img src="/cultivate.png" alt="Logo" className="h-8 w-8"/>
+                    <img src="/cultivate.png" alt="Logo" className="h-10 w-10"/>
                     <span className="text-lg font-bold">Thennavan</span>
                 </div>
             </div>

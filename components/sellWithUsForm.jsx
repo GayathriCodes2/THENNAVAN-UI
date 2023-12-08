@@ -62,7 +62,7 @@ Product Details: ${productDetails}
 `;
 
         // Construct WhatsApp link
-        const whatsappLink = `https://wa.me/9092993545?text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappLink = `https://wa.me/9677927081?text=${encodeURIComponent(whatsappMessage)}`;
 
         // Open WhatsApp link in a new tab
         window.open(whatsappLink, '_blank');

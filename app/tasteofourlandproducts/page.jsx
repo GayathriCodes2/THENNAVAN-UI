@@ -9,7 +9,7 @@ const products = [
     heading: 'Tirunelveli - Halwa',
     description: 'Description for Product 1',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9092993545?text=Need",
+    buyNowLink: "https://wa.me/9677927081?text=Need",
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -22,7 +22,7 @@ const products = [
     heading: 'Thoothukudi - Macaroons',
     description: 'Description for Product 1',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9092993545?text=Need",
+    buyNowLink: "https://wa.me/9677927081?text=Need",
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -35,7 +35,7 @@ const products = [
     heading: 'Kovilpatti - Kadalai mittai',
     description: 'Description for Product 1',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9092993545?text=Need",
+    buyNowLink: "https://wa.me/9677927081?text=Need",
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -48,7 +48,7 @@ const products = [
     heading: 'Nagercoil - Chips',
     description: 'Description for Product 1',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9092993545?text=Need",
+    buyNowLink: "https://wa.me/9677927081?text=Need",
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -61,7 +61,7 @@ const products = [
     heading: 'Kai - Murukku',
     description: 'Description for Product 1',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9092993545?text=Need",
+    buyNowLink: "https://wa.me/9677927081?text=Need",
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -74,7 +74,7 @@ const products = [
     heading: 'Seydunganallor - Mixture',
     description: 'Description for Product 1',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9092993545?text=Need",
+    buyNowLink: "https://wa.me/9677927081?text=Need",
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
