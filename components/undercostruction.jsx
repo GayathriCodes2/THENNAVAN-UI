@@ -14,7 +14,7 @@ const UnderConstructionPage = () => {
                 />
             </div>
             <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                <h2>This page is under construction</h2>
+                <h2 className='font-semibold tex'>This page is under construction</h2>
                 <p>
                     We're working hard to bring you exciting content. Please check back
                     later for updates. In the meantime, feel free to explore other

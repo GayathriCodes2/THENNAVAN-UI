@@ -58,6 +58,7 @@ const Header = () => {
                 <div className="md:hidden flex flex-col items-center space-y-2">
                     <a href="/tasteofourlandproducts" className="nav-link  hover:bg-green-500 transition-all p-2">Signature Local Delicacies</a>
                     <a href="/fromfarmersproducts" className="nav-link  hover:bg-green-500 transition-all p-2">Our Harvested Goods</a>
+                    <a href="/loveofourladies" className="nav-link  hover:bg-green-500 transition-all rounded p-2">Love of Our ladies</a>
                     <a href="/sellwithus" className="nav-link  hover:bg-green-500 transition-all p-2">Sell With Us</a>
                     <a href="/about-us" className="nav-link hover:bg-green-500 transition-all p-2">About Us</a>
                 </div>
