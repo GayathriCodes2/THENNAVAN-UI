@@ -4,8 +4,8 @@ import React from 'react';
 
 const UnderConstructionPage = () => {
     return (
-        <div>
-            <div>
+        <div className='h-screen'>
+            <div className='lg:mt-32'>
                 {/* Place your image source and styling here */}
                 <img
                     src="/Underconstruction-img.png"

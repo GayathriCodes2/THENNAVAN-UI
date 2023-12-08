@@ -31,7 +31,7 @@ const products = [
   },
   {
     id: 3,
-    imageUrl: '/CircularDecorativeBasket.jpeg',
+    imageUrl: '/CircularDecorativeBasket-removebg-preview.png',
     heading: 'Handmade Circular Decorative Basket',
     description: 'Customization Available',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
@@ -57,7 +57,7 @@ const products = [
   },
   {
     id: 5,
-    imageUrl: '/CircularFiberHamper.jpeg',
+    imageUrl: '/CircularFiberHamper-removebg-preview.png',
     heading: 'Circular Banana Fiber Basket',
     description: 'Customization Available',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
@@ -83,7 +83,7 @@ const products = [
   },
   {
     id: 7,
-    imageUrl: '/FruitandVegBasket.jpeg',
+    imageUrl: '/FruitandVegBasket-removebg-preview.png',
     heading: 'Fruit/Vegetable Holder Banana Fibre Basket',
     description: 'Customization Available',
     price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },

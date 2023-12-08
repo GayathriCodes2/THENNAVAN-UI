@@ -1,8 +1,10 @@
 "use client"
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
+// ProductCard component
 const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weightOptions }) => {
   const [selectedWeight, setSelectedWeight] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     // Set selectedWeight to the first available option when weightOptions is not empty
@@ -21,10 +23,36 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weight
     window.location.href = linkWithWeight;
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Reset any other modal-related state if needed
+  };
+
   return (
     <div className="flex border p-2">
       <div>
-        <img src={imageUrl} alt={heading} height={44} width={44} className="lg:w-32 rounded-xl w-28 lg:h-32 h-32 object-cover" />
+        <img
+          src={imageUrl}
+          alt={heading}
+          height={44}
+          width={44}
+          className="lg:w-32 rounded-xl w-28 lg:h-32 h-32 object-cover cursor-pointer"
+          onClick={openModal}
+        />
+        {isModalOpen && (
+          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white p-4 rounded-lg">
+              <img src={imageUrl} alt={heading} className="max-w-full max-h-full" />
+              <button className="mt-4 px-2 py-1 bg-gray-500 text-white rounded-md" onClick={closeModal}>
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
       <div className="flex-grow lg:mx-4 mx-1">
         <h4 className="lg:text-lg text-xs">{heading}</h4>
@@ -33,7 +61,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weight
         <select
           id="weight"
           name="weight"
-          className="mt-1 p-2 w-auto sm:p-1  ml-2 border rounded-md"
+          className="mt-1 p-2 w-auto sm:p-1 ml-2 border rounded-md"
           value={selectedWeight}
           onChange={handleWeightChange}
         >
