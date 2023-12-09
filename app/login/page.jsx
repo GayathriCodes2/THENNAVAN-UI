@@ -46,20 +46,7 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-600">Category:</label>
-          <select
-            className="mt-1 p-2 w-full border rounded-md"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="">Select Category</option>
-            <option value="From Farmer">From Farmer</option>
-            <option value="Taste of our land">Taste of our land</option>
-            <option value="Love of our ladies">Love of our ladies</option>
-          </select>
-        </div>
-
+        
         {loggedIn ? (
           <Link href="/admin">
             <span className="bg-black text-white py-2 px-4 w-full rounded-md hover:bg-white hover:text-black border border-black transition duration-300">
