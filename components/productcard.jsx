@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 
 // ProductCard component
-const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weightOptions }) => {
+const ProductCard = ({ imageUrl, heading, description, price, weightOptions }) => {
   const [selectedWeight, setSelectedWeight] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -19,7 +19,7 @@ const ProductCard = ({ imageUrl, heading, description, price, buyNowLink, weight
   };
 
   const handlePreBookClick = () => {
-    const linkWithWeight = `${buyNowLink}%20${heading}%20weight%20${selectedWeight}`;
+    const linkWithWeight = `https://wa.me/9677927081?text=Need%20${heading}%20weight%20${selectedWeight}`;
     console.log('Pre Book clicked for', heading, 'with weight', selectedWeight);
     window.location.href = linkWithWeight;
   };
