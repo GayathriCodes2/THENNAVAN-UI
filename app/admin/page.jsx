@@ -27,6 +27,55 @@ const AdminPage = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   
+  const products = [
+    {
+      category: 'Vegetables',
+      name: 'Carrot',
+      description: 'Orange vegetable',
+      weight1: '100g',
+      quantity1: 5,
+      price1: 2.5,
+      weight2: '200g',
+      quantity2: 3,
+      price2: 4.0,
+      weight3: '500g',
+      quantity3: 2,
+      price3: 8.0,
+      isOrganic: true,
+    },
+    {
+      category: 'Fruits',
+      name: 'Apple',
+      description: 'Red fruit',
+      weight1: '150g',
+      quantity1: 4,
+      price1: 3.0,
+      weight2: '300g',
+      quantity2: 2,
+      price2: 5.0,
+      weight3: '750g',
+      quantity3: 1,
+      price3: 10.0,
+      isOrganic: false,
+    },
+    // Add more sample data with duplicates
+    {
+      category: 'Vegetables',
+      name: 'Broccoli',
+      description: 'Green vegetable',
+      weight1: '120g',
+      quantity1: 3,
+      price1: 3.0,
+      weight2: '250g',
+      quantity2: 2,
+      price2: 5.5,
+      weight3: '600g',
+      quantity3: 1,
+      price3: 9.0,
+      isOrganic: true,
+    },
+  ];
+
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
     setImagePreview(selectedImage);
@@ -309,6 +358,61 @@ const AdminPage = () => {
 
       </div>
 
+      <div className="container mx-auto p-4">
+      <table className="min-w-full bg-white border border-gray-300">
+        <thead>
+          <tr>
+            <th className="py-2 px-4 border-b">Category</th>
+            <th className="py-2 px-4 border-b">Product Name</th>
+            <th className="py-2 px-4 border-b">Description</th>
+            <th className="py-2 px-4 border-b" colSpan="3">
+              Weight
+            </th>
+            <th className="py-2 px-4 border-b" colSpan="3">
+              Quantity
+            </th>
+            <th className="py-2 px-4 border-b" colSpan="3">
+              Price
+            </th>
+            <th className="py-2 px-4 border-b">Is Organic</th>
+          </tr>
+          <tr>
+            <th className="py-2 px-4 border-b"></th>
+            <th className="py-2 px-4 border-b"></th>
+            <th className="py-2 px-4 border-b"></th>
+            <th className="py-2 px-4 border-b">1</th>
+            <th className="py-2 px-4 border-b">2</th>
+            <th className="py-2 px-4 border-b">3</th>
+            <th className="py-2 px-4 border-b">1</th>
+            <th className="py-2 px-4 border-b">2</th>
+            <th className="py-2 px-4 border-b">3</th>
+            <th className="py-2 px-4 border-b">1</th>
+            <th className="py-2 px-4 border-b">2</th>
+            <th className="py-2 px-4 border-b">3</th>
+            <th className="py-2 px-4 border-b"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product, index) => (
+            <tr key={index}>
+              <td className="py-2 px-4 border-b">{product.category}</td>
+              <td className="py-2 px-4 border-b">{product.name}</td>
+              <td className="py-2 px-4 border-b">{product.description}</td>
+              <td className="py-2 px-4 border-b">{product.weight1}</td>
+              <td className="py-2 px-4 border-b">{product.weight2}</td>
+              <td className="py-2 px-4 border-b">{product.weight3}</td>
+              <td className="py-2 px-4 border-b">{product.quantity1}</td>
+              <td className="py-2 px-4 border-b">{product.quantity2}</td>
+              <td className="py-2 px-4 border-b">{product.quantity3}</td>
+              <td className="py-2 px-4 border-b">{product.price1}</td>
+              <td className="py-2 px-4 border-b">{product.price2}</td>
+              <td className="py-2 px-4 border-b">{product.price3}</td>
+              <td className="py-2 px-4 border-b">{product.isOrganic ? 'Yes' : 'No'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     </div>
   );
 }
