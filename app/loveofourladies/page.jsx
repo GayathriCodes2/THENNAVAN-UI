@@ -7,8 +7,7 @@ const products = [
     imageUrl: '/BananaFibrePlate.png',
     heading: 'Banana Fibre Plate',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -21,8 +20,7 @@ const products = [
     imageUrl: '/BasketWithLid.png',
     heading: 'Handmade Basket With Lid',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -34,8 +32,7 @@ const products = [
     imageUrl: '/CircularDecorativeBasket-removebg-preview.png',
     heading: 'Handmade Circular Decorative Basket',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -47,8 +44,7 @@ const products = [
     imageUrl: '/CircularDeepMultipurpose.png',
     heading: 'Handmade Circular Deep Multipurpose Basket',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -60,8 +56,7 @@ const products = [
     imageUrl: '/CircularFiberHamper-removebg-preview.png',
     heading: 'Circular Banana Fiber Basket',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -73,8 +68,7 @@ const products = [
     imageUrl: '/DecorativeDeepBananaFabricBasket.png',
     heading: 'Decorative Deep Handmade Basket',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -86,8 +80,7 @@ const products = [
     imageUrl: '/FruitandVegBasket-removebg-preview.png',
     heading: 'Fruit/Vegetable Holder Banana Fibre Basket',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -100,8 +93,7 @@ const products = [
     imageUrl: '/FruitAndVegBasketWithHandle.png',
     heading: 'Fruit/Vegetable Holder Handmade Basket with Handle',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -113,8 +105,7 @@ const products = [
     imageUrl: '/LampHolder.png',
     heading: 'Handmade Lamp Holder',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -126,8 +117,7 @@ const products = [
     imageUrl: '/OvalFruitAndVegBasketWithHandle.png',
     heading: 'Handmade Oval Fruit/VegBasket With Handle',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -140,8 +130,7 @@ const products = [
     imageUrl: '/SquareDeepMultipurpose.png',
     heading: 'Handmade Square Deep Multipurpose',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -153,8 +142,7 @@ const products = [
     imageUrl: '/TallBlanketBasket.png',
     heading: 'Handmade Tall Blanket Basket',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -166,8 +154,7 @@ const products = [
     imageUrl: '/DecorativeDeepBananaFabricBasket.png',
     heading: 'Decorative Deep Banana Fabric Basket ',
     description: 'Customization Available',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },

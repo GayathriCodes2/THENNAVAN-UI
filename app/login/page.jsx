@@ -13,6 +13,7 @@ const LoginPage = () => {
   const handleLogin = () => {
     if (username === "admin" && password === "admin") {
       // Successful login logic (set authentication state)
+      localStorage.setItem('authToken', 'ghjsfjdfweufhnjsdnjfsdfj');
       console.log("Login successful");
       setLoggedIn(true);
     } else {

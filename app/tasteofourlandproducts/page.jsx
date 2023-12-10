@@ -8,8 +8,7 @@ const products = [
     imageUrl: '/Tirunelveli-Halwa.jpg',
     heading: 'Tirunelveli - Halwa',
     description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -21,8 +20,7 @@ const products = [
     imageUrl: '/Thoothukudi-Macaroons.jpg',
     heading: 'Thoothukudi - Macaroons',
     description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -34,8 +32,7 @@ const products = [
     imageUrl: '/Peanut-candy.jpg',
     heading: 'Kovilpatti - Kadalai mittai',
     description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -47,8 +44,7 @@ const products = [
     imageUrl: '/Banana-chips.jpg',
     heading: 'Nagercoil - Chips',
     description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -60,8 +56,7 @@ const products = [
     imageUrl: '/Kai-Murukku.png',
     heading: 'Kai - Murukku',
     description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },
@@ -73,8 +68,7 @@ const products = [
     imageUrl: '/Seydubganallor-Mixture.png',
     heading: 'Seydunganallor - Mixture',
     description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 },
-    buyNowLink: "https://wa.me/9677927081?text=Need",
+    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
     weightOptions: [
       { label: '1 kg', value: '1kg' },
       { label: '2 kg', value: '2kg' },

@@ -1,7 +1,15 @@
-'use client'
-import React, { useState } from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
 
-const Admin = () => {
+const AdminPage = () => {
+  useEffect(() => {
+    // Check authentication status
+    const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+      // Redirect to login page if not authenticated
+      window.location.href = '/login';
+    }
+  }, []);
   const [imagePreview, setImagePreview] = useState(null);
   const [category, setCategory] = useState('');
   const [productName, setProductName] = useState('');
@@ -17,8 +25,8 @@ const Admin = () => {
   const [quantity3Price, setQuantity3Price] = useState('');
   const [isOrganic, setIsOrganic] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const [showPopup, setShowPopup] = useState(false); // Add this state for controlling the popup
-
+  const [showPopup, setShowPopup] = useState(false);
+  
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
     setImagePreview(selectedImage);
@@ -44,25 +52,7 @@ const Admin = () => {
       return;
     }
 
-    // Handle form submission logic here
-    // You can send the form data to your backend or perform other actions
-    console.log({
-      imagePreview,
-      category,
-      productName,
-      description,
-      quantity1,
-      quantity1Unit,
-      quantity1Price,
-      quantity2,
-      quantity2Unit,
-      quantity2Price,
-      quantity3,
-      quantity3Unit,
-      quantity3Price,
-      isOrganic,
-      // Add more fields here
-    });
+    
 
     // Display success message
     setSuccessMessage('Product added successfully!');
@@ -85,6 +75,7 @@ const Admin = () => {
     setQuantity3Price('');
     setIsOrganic(false);
   }
+
 
   return (
     <div className="container mx-auto mt-8">
@@ -322,4 +313,5 @@ const Admin = () => {
   );
 }
 
-export default Admin;
+
+export default AdminPage;
