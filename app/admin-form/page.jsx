@@ -281,34 +281,8 @@ const AdminPage = () => {
           Submit
         </button>
       </form>
-      {/* Horizontal line */}
-      <hr className="w-full md:w-full h-1 mx-auto my-2 md:my-4 bg-gray-700 border-0 rounded" />
+      
 
-
-      {/* Category */}
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">Category</label>
-        <select
-          className="w-56 p-2 border rounded"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          required
-        >
-          <option value="">Select Category</option>
-          <option value="Farmers">From Farmers</option>
-          <option value="Taste">Taste of our land</option>
-          <option value="Love">Love of our ladies</option>
-        </select>
-        {/* Submit Button Below HR */}
-        <button
-          type="submit"
-          onClick={handleSubmit}
-          className="bg-black w-48 mr-4 text-white py-2 px-4 rounded-md hover:bg-white hover:text-black border border-black transition duration-300"
-        >
-          Submit
-        </button>
-
-      </div>
 
     </div>
   );
