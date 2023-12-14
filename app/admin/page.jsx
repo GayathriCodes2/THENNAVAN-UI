@@ -24,17 +24,17 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
+          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'http://localhost:3002/tasteofourland/tasteofourlands';
+          apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourlands';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'http://localhost:3002/loveofourladies/loveofourladiess';
+          apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladiess';
           break;
         // Add more cases for additional categories if needed
         default:
-          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers'; 
+          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers'; 
       }
 
       const response = await axios.get(apiUrl);
