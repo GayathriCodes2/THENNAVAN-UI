@@ -1,17 +1,11 @@
 // admin-form.jsx
 "use client"
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const AdminPage = () => {
-  useEffect(() => {
-    // Check authentication status
-    const authToken = localStorage.getItem('authToken');
-    if (!authToken) {
-      // Redirect to login page if not authenticated
-      window.location.href = '/login';
-    }
-  }, []);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
   const [category, setCategory] = useState('');
   const [productName, setProductName] = useState('');
   const [description, setDescription] = useState('');
@@ -24,60 +18,62 @@ const AdminPage = () => {
   const [quantity3, setQuantity3] = useState('');
   const [quantity3Unit, setQuantity3Unit] = useState('g');
   const [quantity3Price, setQuantity3Price] = useState('');
-  const [isOrganic, setIsOrganic] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
+  const [isOrganic, setIsOrganic] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
+  useEffect(() => {
+    // Check authentication status
+    const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+      // Redirect to login page if not authenticated
+      window.location.href = '/login';
+    }
+  }, []);
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
-    setImagePreview(selectedImage);
+    setImage(selectedImage);
 
     // Display image preview
     const reader = new FileReader();
     reader.onloadend = () => {
       setImagePreview(reader.result);
     };
-    if (selectedImage) {
-      reader.readAsDataURL(selectedImage);
-    } else {
-      setImagePreview(null);
-    }
+    reader.readAsDataURL(selectedImage);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate form fields
-    if(!imagePreview || !category || !productName || !description || !quantity1 || !quantity1Price || !quantity2 || !quantity2Price || !quantity3 || !quantity3Price){
-      alert('Please fill in all required fields, including the image');
-      return;
+    // Create FormData object
+    const formData = new FormData();
+    formData.append('image', image);
+    formData.append('category', category);
+    formData.append('productName', productName);
+    formData.append('description', description);
+    formData.append('quantity1', quantity1);
+    formData.append('quantity1Unit', quantity1Unit);
+    formData.append('quantity1Price', quantity1Price);
+    formData.append('quantity2', quantity2);
+    formData.append('quantity2Unit', quantity2Unit);
+    formData.append('quantity2Price', quantity2Price);
+    formData.append('quantity3', quantity3);
+    formData.append('quantity3Unit', quantity3Unit);
+    formData.append('quantity3Price', quantity3Price);
+    formData.append('isOrganic', isOrganic);
+
+    try {
+      // Make POST request using axios
+      const response = await axios.post('http://localhost:3002/loveofourladies/loveofourladiess', formData);
+      // Handle success
+      setSuccessMessage(response.data.message);
+      setShowPopup(true);
+    } catch (error) {
+      // Handle error
+      console.error('Error submitting form:', error);
     }
-
-    
-
-    // Display success message
-    setSuccessMessage('Product added successfully!');
-    // Show the popup
-    setShowPopup(true);
-
-    // Clear the form after submission
-    setImagePreview(null);
-    setCategory('');
-    setProductName('');
-    setDescription('');
-    setQuantity1('');
-    setQuantity1Unit('g');
-    setQuantity1Price('');
-    setQuantity2('');
-    setQuantity2Unit('g');
-    setQuantity2Price('');
-    setQuantity3('');
-    setQuantity3Unit('g');
-    setQuantity3Price('');
-    setIsOrganic(false);
-  }
-
+  };
 
   return (
     <div className="container mx-auto mt-8">
@@ -104,7 +100,6 @@ const AdminPage = () => {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            required
           />
           {imagePreview && (
             <img
@@ -157,7 +152,7 @@ const AdminPage = () => {
           <label className="block text-gray-700 text-sm font-bold mb-2">Quantity 1</label>
           <div className="flex">
             <input
-              type="text"
+              type="number"
               className="w-1/2 p-2 border rounded mr-2"
               value={quantity1}
               onChange={(e) => setQuantity1(e.target.value)}
@@ -175,7 +170,7 @@ const AdminPage = () => {
               <option value="liter">liter</option>
             </select>
             <input
-              type="text"
+              type="number"
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
               value={quantity1Price}
@@ -189,7 +184,7 @@ const AdminPage = () => {
           <label className="block text-gray-700 text-sm font-bold mb-2">Quantity 2</label>
           <div className="flex">
             <input
-              type="text"
+              type="number"
               className="w-1/2 p-2 border rounded mr-2"
               value={quantity2}
               onChange={(e) => setQuantity2(e.target.value)}
@@ -207,7 +202,7 @@ const AdminPage = () => {
               <option value="liter">liter</option>
             </select>
             <input
-              type="text"
+              type="number"
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
               value={quantity2Price}
@@ -221,7 +216,7 @@ const AdminPage = () => {
           <label className="block text-gray-700 text-sm font-bold mb-2">Quantity 3</label>
           <div className="flex">
             <input
-              type="text"
+              type="number"
               className="w-1/2 p-2 border rounded mr-2"
               value={quantity3}
               onChange={(e) => setQuantity3(e.target.value)}
@@ -239,7 +234,7 @@ const AdminPage = () => {
               <option value="liter">liter</option>
             </select>
             <input
-              type="text"
+              type="number"
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
               value={quantity3Price}
@@ -282,7 +277,7 @@ const AdminPage = () => {
           Submit
         </button>
       </form>
-      
+
 
 
     </div>
