@@ -3,17 +3,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AdminPage = () => {
-  const [imageBlob, setImageBlob] = useState(null);
-  useEffect(() => {
-    // Check authentication status
-    const authToken = localStorage.getItem('authToken');
-    if (!authToken) {
-      // Redirect to login page if not authenticated
-      window.location.href = '/login';
-    }
-  }, []);
-
-  const [imagePreview, setImagePreview] = useState(null);
+  const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
   const [category, setCategory] = useState('');
   const [productName, setProductName] = useState('');
   const [description, setDescription] = useState('');
@@ -26,40 +17,37 @@ const AdminPage = () => {
   const [quantity3, setQuantity3] = useState('');
   const [quantity3Unit, setQuantity3Unit] = useState('g');
   const [quantity3Price, setQuantity3Price] = useState('');
-  const [isOrganic, setIsOrganic] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
+  const [isOrganic, setIsOrganic] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+
+  useEffect(() => {
+    // Check authentication status
+    const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+      // Redirect to login page if not authenticated
+      window.location.href = '/login';
+    }
+  }, []);
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
+    setImage(selectedImage);
 
+    // Display image preview
     const reader = new FileReader();
     reader.onloadend = () => {
-      // setImagePreview(reader.result); // Comment this line
-
-      // Store the image as Blob
-      setImageBlob(new Blob([reader.result], { type: selectedImage.type }));
+      setImagePreview(reader.result);
     };
-
-    if (selectedImage) {
-      reader.readAsArrayBuffer(selectedImage);
-    } else {
-      // setImagePreview(null); // Comment this line
-      setImageBlob(null);
-    }
+    reader.readAsDataURL(selectedImage);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate form fields
-    if (!imageBlob || !category || !productName || !description || !quantity1 || !quantity1Price || !quantity2 || !quantity2Price || !quantity3 || !quantity3Price) {
-      alert('Please fill in all required fields, including the image');
-      return;
-    }
-
+    // Create FormData object
     const formData = new FormData();
-    formData.append('image', imageBlob);
+    formData.append('image', image);
     formData.append('category', category);
     formData.append('productName', productName);
     formData.append('description', description);
@@ -75,31 +63,14 @@ const AdminPage = () => {
     formData.append('isOrganic', isOrganic);
 
     try {
-      // Use Axios to make a POST request to your backend URL
-      const response = await axios.post('http://localhost:3002/loveofourladies/loveofourladies', formData);
-
-      // Handle success response
-      setSuccessMessage('Product added successfully!');
+      // Make POST request using axios
+      const response = await axios.post('http://localhost:3002/loveofourladies/loveofourladiess', formData);
+      // Handle success
+      setSuccessMessage(response.data.message);
       setShowPopup(true);
-
-      // Clear the form after submission
-      setImageBlob(null);
-      setCategory('');
-      setProductName('');
-      setDescription('');
-      setQuantity1('');
-      setQuantity1Unit('g');
-      setQuantity1Price('');
-      setQuantity2('');
-      setQuantity2Unit('g');
-      setQuantity2Price('');
-      setQuantity3('');
-      setQuantity3Unit('g');
-      setQuantity3Price('');
-      setIsOrganic(false);
     } catch (error) {
-      // Handle error here
-      console.error('Error adding product:', error);
+      // Handle error
+      console.error('Error submitting form:', error);
     }
   };
 
@@ -128,7 +99,6 @@ const AdminPage = () => {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            required
           />
           {imagePreview && (
             <img
@@ -306,7 +276,7 @@ const AdminPage = () => {
           Submit
         </button>
       </form>
-      
+
 
 
     </div>
