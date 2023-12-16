@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="mb-4 md:mb-0 flex flex-col items-center md:flex-row">
           <Link href="/sellwithus" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Sell with Us</Link>
           <Link href="/t&c" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Terms & Conditions</Link>
-          <Link href="/reviews" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Reviews</Link>
+          <a href="https://g.page/r/CVqpeVnC9Hu4EBM/review" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">Reviews</a>
           <Link href="/faqs" className="hover:bg-green-500 transition-all rounded p-2 mb-2 md:mb-0">FAQs</Link>
         </div>
 

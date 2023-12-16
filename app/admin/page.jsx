@@ -3,56 +3,56 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 const AdminPage = () => {
 
-  const [category, setCategory] = useState('');
-  const [products, setProducts] = useState([
-    
-    {
-      category: 'Vegetables',
-      name: 'Carrot',
-      description: 'Orange vegetable',
-      weight1: '100g',
-      quantity1: 5,
-      price1: 2.5,
-      weight2: '200g',
-      quantity2: 3,
-      price2: 4.0,
-      weight3: '500g',
-      quantity3: 2,
-      price3: 8.0,
-      isOrganic: true,
-  },
-  {
-      category: 'Fruits',
-      name: 'Apple',
-      description: 'Red fruit',
-      weight1: '150g',
-      quantity1: 4,
-      price1: 3.0,
-      weight2: '300g',
-      quantity2: 2,
-      price2: 5.0,
-      weight3: '750g',
-      quantity3: 1,
-      price3: 10.0,
-      isOrganic: false,
-  },
-  {
-      category: 'Vegetables',
-      name: 'Broccoli',
-      description: 'Green vegetable',
-      weight1: '120g',
-      quantity1: 3,
-      price1: 3.0,
-      weight2: '250g',
-      quantity2: 2,
-      price2: 5.5,
-      weight3: '600g',
-      quantity3: 1,
-      price3: 9.0,
-      isOrganic: true,
-  },
-  ]);
-  
+    const [category, setCategory] = useState('');
+    const [products, setProducts] = useState([
+
+        {
+            category: 'Vegetables',
+            name: 'Carrot',
+            description: 'Orange vegetable',
+            weight1: '100g',
+            quantity1: 5,
+            price1: 2.5,
+            weight2: '200g',
+            quantity2: 3,
+            price2: 4.0,
+            weight3: '500g',
+            quantity3: 2,
+            price3: 8.0,
+            isOrganic: true,
+        },
+        {
+            category: 'Fruits',
+            name: 'Apple',
+            description: 'Red fruit',
+            weight1: '150g',
+            quantity1: 4,
+            price1: 3.0,
+            weight2: '300g',
+            quantity2: 2,
+            price2: 5.0,
+            weight3: '750g',
+            quantity3: 1,
+            price3: 10.0,
+            isOrganic: false,
+        },
+        {
+            category: 'Vegetables',
+            name: 'Broccoli',
+            description: 'Green vegetable',
+            weight1: '120g',
+            quantity1: 3,
+            price1: 3.0,
+            weight2: '250g',
+            quantity2: 2,
+            price2: 5.5,
+            weight3: '600g',
+            quantity3: 1,
+            price3: 9.0,
+            isOrganic: true,
+        },
+    ]);
+
     useEffect(() => {
         // Check authentication status
         const authToken = localStorage.getItem('authToken');
@@ -63,16 +63,16 @@ const AdminPage = () => {
     }, []);
 
     const handleEditProduct = (index) => {
-      // Implement the logic to edit the product at the specified index
-      // You can show a modal or navigate to a new page for editing the product
-      console.log(`Edit Product clicked for index ${index}`);
+        // Implement the logic to edit the product at the specified index
+        // You can show a modal or navigate to a new page for editing the product
+        console.log(`Edit Product clicked for index ${index}`);
     };
-  
+
     const handleDeleteProduct = (index) => {
-      // Implement the logic to delete the product at the specified index
-      const updatedProducts = [...products];
-      updatedProducts.splice(index, 1);
-      setProducts(updatedProducts);
+        // Implement the logic to delete the product at the specified index
+        const updatedProducts = [...products];
+        updatedProducts.splice(index, 1);
+        setProducts(updatedProducts);
     };
 
     const handleSubmit = (e) => {
@@ -112,10 +112,10 @@ const AdminPage = () => {
 
             </div>
             <div className="flex justify-end">
-            <Link href='/admin-form'>
-                <button className="bg-black text-white py-2 px-4 mb-4" onClick={handleAddProduct}>
-                    Add Product
-                </button>
+                <Link href='/admin-form'>
+                    <button className="bg-black text-white py-2 px-4 mb-4" onClick={handleAddProduct}>
+                        Add Product
+                    </button>
                 </Link>
             </div>
 
@@ -164,13 +164,13 @@ const AdminPage = () => {
                                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
                                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
                                 <td className="py-2 px-4 border-b my-auto">
-                <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(index)}>
-                          Edit
-                </button>
-                <button className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleDeleteProduct(index)}>
-                 Delete 
-              </button>
-              </td>
+                                    <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(index)}>
+                                        Edit
+                                    </button>
+                                    <button className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleDeleteProduct(index)}>
+                                        Delete
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
