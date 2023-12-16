@@ -24,17 +24,17 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
+          apiUrl = 'https://localhost:3002/fromfarmers/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourlands';
+          apiUrl = 'https://localhost:3002/tasteofourland/tasteofourlands';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladiess';
+          apiUrl = 'https://localhost:3002/loveofourladies/loveofourladiess';
           break;
         // Add more cases for additional categories if needed
         default:
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers'; 
+          apiUrl = 'https://localhost:3002/fromfarmers/fromfarmers'; 
       }
 
       const response = await axios.get(apiUrl);
@@ -53,28 +53,10 @@ const AdminPage = () => {
 
   const handleDeleteProduct = async ({productId}) => {
     try {
-        
-    //   let apiUrl = '';
-    //   // Perform delete action using the product ID
-    //   switch (category) {
-    //     case 'Farmers':
-    //       apiUrl = `http://localhost:3002/fromfarmers/${productId}`;
-    //       break;
-    //     case 'TasteOfOurLand':
-    //       apiUrl = `http://localhost:3002/tasteofourland/${productId}`;
-    //       break;
-    //     case 'loveOfOurLadies':
-    //       apiUrl = `http://localhost:3002/loveofourladies/${productId}`;
-    //       break;
-    //     // Add more cases for additional categories if needed
-    //     default:
-    //       apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers'; 
-    //   }
-    //   await axios.delete(apiUrl);
       console.log("(*****************",productId)
       // Fetch data again after delete
       fetchData();
-       } catch (error) {
+      } catch (error) {
       console.error('Error deleting product:', error);
     }
   };
@@ -124,7 +106,8 @@ const AdminPage = () => {
                 <table className="min-w-full bg-white border border-gray-300">
                     <thead>
                         <tr>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">S.No</th>
+                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Product Image</th>
                             <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Product Name</th>
                             <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Description</th>
                             <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Weight</th>
@@ -151,7 +134,8 @@ const AdminPage = () => {
                     <tbody>
                         {products.map((product, index) => (
                             <tr key={index}>
-                                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></td>
+                                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productId}</td>
+                                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productImage}</td>
                                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
                                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
                                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue1}</td>
