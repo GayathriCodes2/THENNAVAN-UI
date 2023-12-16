@@ -4,19 +4,19 @@ import axios from 'axios';
 
 const AdminPage = () => {
   const [image, setImage] = useState(null);
-  const [productImage, setproductImage] = useState('');
+  const [productImage, setProductImage] = useState('');
   const [category, setCategory] = useState('');
   const [productName, setProductName] = useState('');
   const [description, setDescription] = useState('');
   const [quantity1, setQuantity1] = useState('');
   const [quantity1Unit, setQuantity1Unit] = useState('g');
-  const [price1, setprice1] = useState('');
+  const [price1, setPrice1] = useState('');
   const [quantity2, setQuantity2] = useState('');
   const [quantity2Unit, setQuantity2Unit] = useState('g');
-  const [price2, setprice2] = useState('');
+  const [price2, setPrice2] = useState('');
   const [quantity3, setQuantity3] = useState('');
   const [quantity3Unit, setQuantity3Unit] = useState('g');
-  const [price3, setprice3] = useState('');
+  const [price3, setPrice3] = useState('');
   const [isOrganic, setIsOrganic] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
@@ -38,31 +38,51 @@ const AdminPage = () => {
 
       reader.onloadend = () => {
         setImage(file);
-        setproductImage(reader.result);
+        setProductImage(reader.result);
       };
 
       reader.readAsDataURL(file);
     }
   };
 
+  const apiUrlSwitch = (category) => {
+    let apiUrl = '';
+
+    switch (category) {
+      case 'Farmers':
+        apiUrl = 'http://localhost:3002/fromfarmers/fromfarmer';
+        break;
+      case 'Taste':
+        apiUrl = 'http://localhost:3002/tasteofourland/tasteofourland';
+        break;
+      case 'Love':
+        apiUrl = 'http://localhost:3002/loveofourladies/loveofourladies';
+        break;
+      default:
+        alert("Error APIURL");
+    }
+
+    return apiUrl;
+  };
+
   const handleSubmit = async (values) => {
     try {
-
       // Convert image to base64 string
       const imageBase64 = productImage.split(',')[1];
 
       // Add imageBase64 to values
       values.imageBase64 = imageBase64;
 
-      
+      // Get API URL based on category
+      const apiUrl = apiUrlSwitch(values.category);
+alert(apiUrl);
       // Make POST request using axios
-      const response = await axios.post('http://localhost:3002/loveofourladies/loveofourladies', values);
-      
-      
+      const response = await axios.post(apiUrl, values);
+
       // Handle success
       setSuccessMessage(response.data.message);
       setShowPopup(true);
-      alert(values.productName, " Created Successfully")
+      alert(values.productName, " Created Successfully");
     } catch (error) {
       // Handle error
       console.error('Error submitting form:', error);
@@ -168,7 +188,7 @@ const AdminPage = () => {
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
               value={price1}
-              onChange={(e) => setprice1(e.target.value)}
+              onChange={(e) => setPrice1(e.target.value)}
               required
             />
           </div>
@@ -200,7 +220,7 @@ const AdminPage = () => {
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
               value={price2}
-              onChange={(e) => setprice2(e.target.value)}
+              onChange={(e) => setPrice2(e.target.value)}
               required
             />
           </div>
@@ -232,7 +252,7 @@ const AdminPage = () => {
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
               value={price3}
-              onChange={(e) => setprice3(e.target.value)}
+              onChange={(e) => setPrice3(e.target.value)}
               required
             />
           </div>
