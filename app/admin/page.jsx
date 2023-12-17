@@ -58,17 +58,16 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
+          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'http://localhost:3002/tasteofourland/tasteofourland';
+          apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourland';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'http://localhost:3002/loveofourladies/loveofourladies';
+          apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladies';
           break;
-        // Add more cases for additional categories if needed
         default:
-          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
+          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
       }
       const confirmDelete = window.confirm('Are you sure you want to delete this product?');
       if (confirmDelete) {
