@@ -50,13 +50,13 @@ const AdminPage = () => {
 
     switch (category) {
       case 'Farmers':
-        apiUrl = 'http://localhost:3002/fromfarmers/fromfarmer';
+        apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmer';
         break;
       case 'Taste':
-        apiUrl = 'http://localhost:3002/tasteofourland/tasteofourland';
+        apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourland';
         break;
       case 'Love':
-        apiUrl = 'http://localhost:3002/loveofourladies/loveofourladies';
+        apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladies';
         break;
       default:
         alert("Error APIURL");
