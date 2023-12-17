@@ -139,14 +139,14 @@ const AdminPage = () => {
                 <img
               src={product.productImage}
               alt="Image Preview"
-              className="mt-2 w-full h-auto border rounded"
+              className="mt-2 w-32 h-32 border rounded"
             />
                 </td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue1}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue2}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue3}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1Unit}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2Unit}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3Unit}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
