@@ -24,17 +24,17 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
+          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'http://localhost:3002/tasteofourland/tasteofourlands';
+          apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourlands';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'http://localhost:3002/loveofourladies/loveofourladiess';
+          apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladiess';
           break;
         // Add more cases for additional categories if needed
         default:
-          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers'; 
+          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
       }
 
       const response = await axios.get(apiUrl);
@@ -50,12 +50,33 @@ const AdminPage = () => {
     console.log(`Edit Product clicked for index ${index}`);
   };
 
-
-  const handleDeleteProduct = async ({ productId }) => {
+  const handleDeleteProduct = async (productId, category) => {
     try {
-      console.log("(*****************", productId)
-      // Fetch data again after delete
-      fetchData();
+      console.log(productId);
+      let apiUrl = '';
+
+      // Set axios URL based on selected category
+      switch (category) {
+        case 'Farmers':
+          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
+          break;
+        case 'TasteOfOurLand':
+          apiUrl = 'http://localhost:3002/tasteofourland/tasteofourland';
+          break;
+        case 'loveOfOurLadies':
+          apiUrl = 'http://localhost:3002/loveofourladies/loveofourladies';
+          break;
+        // Add more cases for additional categories if needed
+        default:
+          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
+      }
+      const confirmDelete = window.confirm('Are you sure you want to delete this product?');
+      if (confirmDelete) {
+        await axios.delete(`${apiUrl}/${productId}`);
+        console.log('Product deleted successfully');
+        // Fetch data again after delete
+        fetchData();
+      }
     } catch (error) {
       console.error('Error deleting product:', error);
     }
@@ -136,11 +157,11 @@ const AdminPage = () => {
               <tr key={index}>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{index}</td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">
-                <img
-              src={product.productImage}
-              alt="Image Preview"
-              className="mt-2 w-32 h-32 border rounded"
-            />
+                  <img
+                    src={product.productImage}
+                    alt="Image Preview"
+                    className="mt-2 w-32 h-32 border rounded"
+                  />
                 </td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
@@ -155,10 +176,13 @@ const AdminPage = () => {
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
                 <td className="py-2 px-4 border-b my-auto">
-                  <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(index)}>
+                  <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(product._id, product.category)}>
                     Edit
                   </button>
-                  <button className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleDeleteProduct(product._id)}>
+                  <button
+                    className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2"
+                    onClick={() => handleDeleteProduct(product._id, product.category)}
+                  >
                     Delete
                   </button>
                 </td>

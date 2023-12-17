@@ -103,6 +103,8 @@ function page() {
         ))}
       </div>
 
+      <hr className="lg:w-96 w-40 h-2 mx-auto my-4 bg-gray-700 border-0 rounded md:my-10 "></hr>
+
       <HomeProfileImage
         text="Love of our Ladies"
         path="/loveofourladies"
