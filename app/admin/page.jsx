@@ -24,17 +24,17 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'https://localhost:3002/fromfarmers/fromfarmers';
+          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'https://localhost:3002/tasteofourland/tasteofourlands';
+          apiUrl = 'http://localhost:3002/tasteofourland/tasteofourlands';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'https://localhost:3002/loveofourladies/loveofourladiess';
+          apiUrl = 'http://localhost:3002/loveofourladies/loveofourladiess';
           break;
         // Add more cases for additional categories if needed
         default:
-          apiUrl = 'https://localhost:3002/fromfarmers/fromfarmers'; 
+          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers'; 
       }
 
       const response = await axios.get(apiUrl);
@@ -51,12 +51,12 @@ const AdminPage = () => {
   };
 
 
-  const handleDeleteProduct = async ({productId}) => {
+  const handleDeleteProduct = async ({ productId }) => {
     try {
-      console.log("(*****************",productId)
+      console.log("(*****************", productId)
       // Fetch data again after delete
       fetchData();
-      } catch (error) {
+    } catch (error) {
       console.error('Error deleting product:', error);
     }
   };
@@ -90,7 +90,7 @@ const AdminPage = () => {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="bg-black w-48 mr-4 text-white py-2 px-2 rounded-md hover:bg-white hover:text-black border border-black transition duration-300"
+          className="bg-black w-48 mr-4 text-white py-2 px-2 rounded-md hover:bg-white hover:text-black border border-black transition duration-50"
         >
           Submit
         </button>
@@ -103,66 +103,72 @@ const AdminPage = () => {
         </Link>
       </div>
       <div className="container mx-auto p-4 mt-8 overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
-                    <thead>
-                        <tr>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">S.No</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Product Image</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Product Name</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Description</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Weight</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Quantity</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Price</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Organic</th>
-                        </tr>
-                        <tr>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
-                            <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {products.map((product, index) => (
-                            <tr key={index}>
-                                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productId}</td>
-                                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productImage}</td>
-                                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
-                                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue1}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue2}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue3}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price1}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price2}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
-                                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
-                                <td className="py-2 px-4 border-b my-auto">
-                                    <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(index)}>
-                                        Edit
-                                    </button>
-                                    <button className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleDeleteProduct(product._id)}>
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    );
+        <table className="min-w-full bg-white border border-gray-300">
+          <thead>
+            <tr>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Product Image</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Product Name</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Description</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Weight</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Quantity</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Price</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Organic</th>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product, index) => (
+              <tr key={index}>
+                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{index}</td>
+                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">
+                <img
+              src={product.productImage}
+              alt="Image Preview"
+              className="mt-2 w-full h-auto border rounded"
+            />
+                </td>
+                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
+                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue1}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue2}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue3}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price1}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price2}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
+                <td className="py-2 px-4 border-b my-auto">
+                  <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(index)}>
+                    Edit
+                  </button>
+                  <button className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleDeleteProduct(product._id)}>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
 
 export default AdminPage;
