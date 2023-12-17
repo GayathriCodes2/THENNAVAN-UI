@@ -1,84 +1,24 @@
 // pages/index.js
-
+"use client"
+import React, { useState, useEffect } from 'react';
 import ProductCard from "@components/productcard";
-
-const products = [
-  {
-    id: 1,
-    imageUrl: '/Tirunelveli-Halwa.jpg',
-    heading: 'Tirunelveli - Halwa',
-    description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
-    weightOptions: [
-      { label: '1 kg', value: '1kg' },
-      { label: '2 kg', value: '2kg' },
-      { label: '4 kg', value: '4kg' },
-      { label: '6 kg', value: '6kg' },
-    ],
-  }, {
-    id: 2,
-    imageUrl: '/Thoothukudi-Macaroons.jpg',
-    heading: 'Thoothukudi - Macaroons',
-    description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
-    weightOptions: [
-      { label: '1 kg', value: '1kg' },
-      { label: '2 kg', value: '2kg' },
-      { label: '4 kg', value: '4kg' },
-      { label: '6 kg', value: '6kg' },
-    ],
-  }, {
-    id: 3,
-    imageUrl: '/Peanut-candy.jpg',
-    heading: 'Kovilpatti - Kadalai mittai',
-    description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
-    weightOptions: [
-      { label: '1 kg', value: '1kg' },
-      { label: '2 kg', value: '2kg' },
-      { label: '4 kg', value: '4kg' },
-      { label: '6 kg', value: '6kg' },
-    ],
-  }, {
-    id: 4,
-    imageUrl: '/Banana-chips.jpg',
-    heading: 'Nagercoil - Chips',
-    description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
-    weightOptions: [
-      { label: '1 kg', value: '1kg' },
-      { label: '2 kg', value: '2kg' },
-      { label: '4 kg', value: '4kg' },
-      { label: '6 kg', value: '6kg' },
-    ],
-  },{
-    id: 5,
-    imageUrl: '/Kai-Murukku.png',
-    heading: 'Kai - Murukku',
-    description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
-    weightOptions: [
-      { label: '1 kg', value: '1kg' },
-      { label: '2 kg', value: '2kg' },
-      { label: '4 kg', value: '4kg' },
-      { label: '6 kg', value: '6kg' },
-    ],
-  },{
-    id: 6,
-    imageUrl: '/Seydubganallor-Mixture.png',
-    heading: 'Seydunganallor - Mixture',
-    description: 'Description for Product 1',
-    price: { '1kg': 19.99, '2kg': 29.99, '4kg': 39.99, '6kg': 49.99 }, 
-    weightOptions: [
-      { label: '1 kg', value: '1kg' },
-      { label: '2 kg', value: '2kg' },
-      { label: '4 kg', value: '4kg' },
-      { label: '6 kg', value: '6kg' },
-    ],
-  }
-];
+import axios from 'axios';
 
 const Page = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3002/tasteofourland/tasteofourlands');
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div>
       <h1 className="text-2xl font-semibold my-4">Taste of our land</h1>
