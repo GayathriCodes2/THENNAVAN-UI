@@ -67,7 +67,7 @@ const AdminPage = () => {
           apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladies';
           break;
         default:
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
+          alert(`${category}`)
       }
       const confirmDelete = window.confirm('Are you sure you want to delete this product?');
       if (confirmDelete) {
@@ -102,8 +102,8 @@ const AdminPage = () => {
           required
         >
           <option value="Farmers">From Farmers</option>
-          <option value="TasteOfOurLand">Taste of Our Land</option>
-          <option value="loveOfOurLadies">Love of our Ladies</option>
+            <option value="TasteOfOurLand">Taste of our land</option>
+            <option value="loveOfOurLadies">Love of our ladies</option>
 
           {/* Add more options if needed */}
         </select>
