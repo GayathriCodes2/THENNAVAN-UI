@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const AdminPage = () => {
+const EditForm = () => {
+  const [id, setId] = useState('');
   const [image, setImage] = useState(null);
   const [productImage, setProductImage] = useState('');
   const [category, setCategory] = useState('');
@@ -21,13 +22,40 @@ const AdminPage = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [isAvailableOn, setIsAvailableOn] = useState('yes');
+
   useEffect(() => {
-    // Check authentication status
-    const authToken = localStorage.getItem('authToken');
-    if (!authToken) {
-      // Redirect to login page if not authenticated
-      window.location.href = '/login';
-    }
+    const fetchData = async () => {
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get('id');
+      const productCategory = params.get('category');
+      if (productId && productCategory) {
+        try {
+          setId(productId);
+          const apiUrl = apiUrlSwitch(productCategory);
+          const response = await axios.get(`${apiUrl}/${productId}`);
+          const productData = response.data;
+          setProductImage(productData.productImage);
+          setCategory(productData.category);
+          setProductName(productData.productName);
+          setDescription(productData.description);
+          setQuantity1(productData.quantity1);
+          setQuantity1Unit(productData.quantity1Unit);
+          setPrice1(productData.price1);
+          setQuantity2(productData.quantity2);
+          setQuantity2Unit(productData.quantity2Unit);
+          setPrice2(productData.price2);
+          setQuantity3(productData.quantity3);
+          setQuantity3Unit(productData.quantity3Unit);
+          setPrice3(productData.price3);
+          setIsOrganic(productData.isOrganic);
+          setIsAvailableOn(productData.isAvailableOn);
+        } catch (error) {
+          console.error('Error fetching product data:', error);
+        }
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleImageChange = (e) => {
@@ -50,7 +78,7 @@ const AdminPage = () => {
 
     switch (category) {
       case 'Farmers':
-        apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmer';
+        apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
         break;
       case 'Taste':
         apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourland';
@@ -67,24 +95,14 @@ const AdminPage = () => {
 
   const handleSubmit = async (values) => {
     try {
-      // Convert image to base64 string
       const imageBase64 = productImage.split(',')[1];
-
-      // Add imageBase64 to values
       values.imageBase64 = imageBase64;
-
-      // Get API URL based on category
       const apiUrl = apiUrlSwitch(values.category);
-      alert(apiUrl);
-      // Make POST request using axios
-      const response = await axios.post(apiUrl, values);
-
-      // Handle success
+      const response = await axios.put(`${apiUrl}/${id}`, values);
       setSuccessMessage(response.data.message);
       setShowPopup(true);
-      alert(values.productName, " Created Successfully");
+      alert(`${values.productName} Updated Successfully`);
     } catch (error) {
-      // Handle error
       console.error('Error submitting form:', error);
     }
   };
@@ -106,7 +124,7 @@ const AdminPage = () => {
       )}
 
       <form className="max-w-md mx-auto bg-white p-4 md:p-8 rounded shadow-md">
-
+      
         {/* Image Upload */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Upload Image</label>
@@ -285,7 +303,6 @@ const AdminPage = () => {
           </div>
         </div>
 
-
         {/* Submit Button */}
         <button
           type="submit"
@@ -310,12 +327,8 @@ const AdminPage = () => {
           Submit
         </button>
       </form>
-
-
-
     </div>
   );
-}
+};
 
-
-export default AdminPage;
+export default EditForm;

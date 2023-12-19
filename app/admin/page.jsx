@@ -46,9 +46,9 @@ const AdminPage = () => {
     }
   };
 
-  const handleEditProduct = (index) => {
-    console.log(`Edit Product clicked for index ${index}`);
-  };
+  const handleEditProduct = (productId, category) => {
+    const editFormUrl = `/edit-form?id=${productId}&category=${category}`;
+    window.location.href = editFormUrl;  };
 
   const handleDeleteProduct = async (productId, category) => {
     try {
@@ -134,20 +134,22 @@ const AdminPage = () => {
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Quantity</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Price</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Organic</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Available</th>
             </tr>
             <tr>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b border-l-2 lg:table-cell md:table-cell sm:table-cell">1</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b border-r-2 lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b border-l-2 lg:table-cell md:table-cell sm:table-cell">1</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b border-r-2 lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b border-l-2 lg:table-cell md:table-cell sm:table-cell">1</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b border-r-2 lg:table-cell md:table-cell sm:table-cell">3</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
             </tr>
           </thead>
@@ -164,15 +166,16 @@ const AdminPage = () => {
                 </td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1Unit}</td>
+                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1Unit}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2Unit}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3Unit}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
+                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3Unit}</td>
+                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price1}</td>
+                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
+                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.price1}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price2}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
+                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isAvailableOn ? 'Yes' : 'No'}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
                 <td className="py-2 px-4 border-b my-auto">
                   <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(product._id, product.category)}>
