@@ -52,10 +52,10 @@ const AdminPage = () => {
       case 'Farmers':
         apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmer';
         break;
-      case 'Taste':
+      case 'TasteOfOurLand':
         apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourland';
         break;
-      case 'Love':
+      case 'loveOfOurLadies':
         apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladies';
         break;
       default:
@@ -135,8 +135,8 @@ const AdminPage = () => {
           >
             <option value="">Select Category</option>
             <option value="Farmers">From Farmers</option>
-            <option value="Taste">Taste of our land</option>
-            <option value="Love">Love of our ladies</option>
+            <option value="TasteOfOurLand">Taste of our land</option>
+            <option value="loveOfOurLadies">Love of our ladies</option>
           </select>
         </div>
         {/* Product Name */}
@@ -263,7 +263,7 @@ const AdminPage = () => {
             <label className="block text-gray-700 text-sm font-bold mb-2">Is Organic</label>
             <select
               className="w-1/2 p-2 px-4 border rounded"
-              value={isAvailableOn}
+              value={isOrganic}
               onChange={(e) => setIsOrganic(e.target.value)}
               required
             >

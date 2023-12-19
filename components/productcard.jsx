@@ -1,9 +1,8 @@
-"use client"
 // Import necessary libraries
 import React, { useState } from 'react';
 
 // ProductCard component
-const ProductCard = ({ productImage, productName, description, price1, price2, price3, quantity1, quantity2, quantity3, quantity1Unit, quantity2Unit, quantity3Unit }) => {
+const ProductCard = ({ productImage, productName, description, price1, price2, price3, quantity1, quantity2, quantity3, quantity1Unit, quantity2Unit, quantity3Unit, isAvailableOn, isOrganic }) => {
   const [selectedWeight, setSelectedWeight] = useState(`${quantity1}${quantity1Unit}`);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,21 +32,27 @@ const ProductCard = ({ productImage, productName, description, price1, price2, p
     selectedPrice = price2;
   } else if (selectedWeight === `${quantity3}${quantity3Unit}`) {
     selectedPrice = price3;
-  }else{
+  } else {
     selectedPrice = price1;
   }
 
   return (
     <div className="flex border p-2">
-      <div>
+      <div className='relative'>
+        
         <img
           src={productImage}
           alt={productName}
           height={44}
           width={44}
-          className="lg:w-32 rounded-xl w-28 lg:h-32 h-32 object-cover cursor-pointer"
+          className="lg:w-32 rounded-xl w-28 lg:h-32 h-32 object-cover cursor-pointer relative"
           onClick={openModal}
         />
+        {isOrganic && (
+          <span className="absolute top-1 text-xs right-1 bg-green-400 border border-green-500 text-white p-1 rounded-md z-10">
+            Organic
+          </span>
+        )}
         {isModalOpen && (
           <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-700 ">
             <div className="relative bg-white p-4 rounded-lg">
@@ -65,6 +70,9 @@ const ProductCard = ({ productImage, productName, description, price1, price2, p
       <div className="flex-grow lg:mx-4 mx-1">
         <h4 className="lg:text-lg text-xs">{productName}</h4>
         <p className="text-gray-600 sm:text-sm text-xs ml-1">{description}</p>
+        {!isAvailableOn && (
+          <p className='text-red-400 border border-red-400 my-1 bg-red-50 w-20 p-1 text-xs'>Out of Stock</p>
+        )}
         <label htmlFor="weight" className="mt-2 text-sm text-gray-500">
           Select Weight:
         </label>
