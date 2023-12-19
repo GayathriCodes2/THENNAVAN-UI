@@ -24,17 +24,17 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
+          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourlands';
+          apiUrl = 'http://localhost:3002/tasteofourland/tasteofourlands';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladiess';
+          apiUrl = 'http://localhost:3002/loveofourladies/loveofourladiess';
           break;
         // Add more cases for additional categories if needed
         default:
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
+          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
       }
 
       const response = await axios.get(apiUrl);
@@ -48,7 +48,8 @@ const AdminPage = () => {
 
   const handleEditProduct = (productId, category) => {
     const editFormUrl = `/edit-form?id=${productId}&category=${category}`;
-    window.location.href = editFormUrl;  };
+    window.location.href = editFormUrl;
+  };
 
   const handleDeleteProduct = async (productId, category) => {
     try {
@@ -58,16 +59,16 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
+          apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourland';
+          apiUrl = 'http://localhost:3002/tasteofourland/tasteofourland';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladies';
+          apiUrl = 'http://localhost:3002/loveofourladies/loveofourladies';
           break;
         default:
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
+          alert(category);
       }
       const confirmDelete = window.confirm('Are you sure you want to delete this product?');
       if (confirmDelete) {
@@ -135,6 +136,7 @@ const AdminPage = () => {
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Price</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Organic</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Available</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
             </tr>
             <tr>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
@@ -151,6 +153,9 @@ const AdminPage = () => {
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
               <th className="py-2 px-4 border-b border-r-2 lg:table-cell md:table-cell sm:table-cell">3</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+
             </tr>
           </thead>
           <tbody>
