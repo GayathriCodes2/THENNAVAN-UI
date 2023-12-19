@@ -46,34 +46,36 @@ const AdminPage = () => {
     }
   };
 
-  const handleEditProduct = (index) => {
-    console.log(`Edit Product clicked for index ${index}`);
-  };
+  const handleEditProduct = (productId, category) => {
+    const editFormUrl = `/edit-form?id=${productId}&category=${category}`;
+    window.location.href = editFormUrl;  };
 
-
-  const handleDeleteProduct = async ({ productId }) => {
+  const handleDeleteProduct = async (productId, category) => {
     try {
+      console.log(productId);
+      let apiUrl = '';
 
-      //   let apiUrl = '';
-      //   // Perform delete action using the product ID
-      //   switch (category) {
-      //     case 'Farmers':
-      //       apiUrl = `http://localhost:3002/fromfarmers/${productId}`;
-      //       break;
-      //     case 'TasteOfOurLand':
-      //       apiUrl = `http://localhost:3002/tasteofourland/${productId}`;
-      //       break;
-      //     case 'loveOfOurLadies':
-      //       apiUrl = `http://localhost:3002/loveofourladies/${productId}`;
-      //       break;
-      //     // Add more cases for additional categories if needed
-      //     default:
-      //       apiUrl = 'http://localhost:3002/fromfarmers/fromfarmers'; 
-      //   }
-      //   await axios.delete(apiUrl);
-      console.log("(*****************", productId)
-      // Fetch data again after delete
-      fetchData();
+      // Set axios URL based on selected category
+      switch (category) {
+        case 'Farmers':
+          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
+          break;
+        case 'TasteOfOurLand':
+          apiUrl = 'https://thennavan.onrender.com/tasteofourland/tasteofourland';
+          break;
+        case 'loveOfOurLadies':
+          apiUrl = 'https://thennavan.onrender.com/loveofourladies/loveofourladies';
+          break;
+        default:
+          apiUrl = 'https://thennavan.onrender.com/fromfarmers/fromfarmers';
+      }
+      const confirmDelete = window.confirm('Are you sure you want to delete this product?');
+      if (confirmDelete) {
+        await axios.delete(`${apiUrl}/${productId}`);
+        console.log('Product deleted successfully');
+        // Fetch data again after delete
+        fetchData();
+      }
     } catch (error) {
       console.error('Error deleting product:', error);
     }
@@ -108,7 +110,7 @@ const AdminPage = () => {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="bg-black w-48 mr-4 text-white py-2 px-2 rounded-md hover:bg-white hover:text-black border border-black transition duration-300"
+          className="bg-black w-48 mr-4 text-white py-2 px-2 rounded-md hover:bg-white hover:text-black border border-black transition duration-50"
         >
           Submit
         </button>
@@ -125,50 +127,64 @@ const AdminPage = () => {
           <thead>
             <tr>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Product Image</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Product Name</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Description</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Weight</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Quantity</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Price</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Organic</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Available</th>
             </tr>
             <tr>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b border-l-2 lg:table-cell md:table-cell sm:table-cell">1</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b border-r-2 lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b border-l-2 lg:table-cell md:table-cell sm:table-cell">1</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">1</th>
+              <th className="py-2 px-4 border-b border-r-2 lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b border-l-2 lg:table-cell md:table-cell sm:table-cell">1</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">3</th>
+              <th className="py-2 px-4 border-b border-r-2 lg:table-cell md:table-cell sm:table-cell">3</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
             </tr>
           </thead>
           <tbody>
             {products.map((product, index) => (
               <tr key={index}>
-                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></td>
+                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{index}</td>
+                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">
+                  <img
+                    src={product.productImage}
+                    alt="Image Preview"
+                    className="mt-2 w-32 h-32 border rounded"
+                  />
+                </td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
                 <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue1}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue2}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantityValue3}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
+                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1Unit}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2Unit}</td>
+                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3Unit}</td>
+                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price1}</td>
+                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
+                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.price1}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price2}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
+                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isAvailableOn ? 'Yes' : 'No'}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
                 <td className="py-2 px-4 border-b my-auto">
-                  <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(index)}>
+                  <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(product._id, product.category)}>
                     Edit
                   </button>
-                  <button className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleDeleteProduct(product._id)}>
+                  <button
+                    className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2"
+                    onClick={() => handleDeleteProduct(product._id, product.category)}
+                  >
                     Delete
                   </button>
                 </td>
