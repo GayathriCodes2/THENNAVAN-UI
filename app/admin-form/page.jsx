@@ -1,23 +1,22 @@
-// admin-form.jsx
 "use client"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AdminPage = () => {
   const [image, setImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState('');
+  const [productImage, setProductImage] = useState('');
   const [category, setCategory] = useState('');
   const [productName, setProductName] = useState('');
   const [description, setDescription] = useState('');
   const [quantity1, setQuantity1] = useState('');
   const [quantity1Unit, setQuantity1Unit] = useState('g');
-  const [quantity1Price, setQuantity1Price] = useState('');
+  const [price1, setPrice1] = useState('');
   const [quantity2, setQuantity2] = useState('');
   const [quantity2Unit, setQuantity2Unit] = useState('g');
-  const [quantity2Price, setQuantity2Price] = useState('');
+  const [price2, setPrice2] = useState('');
   const [quantity3, setQuantity3] = useState('');
   const [quantity3Unit, setQuantity3Unit] = useState('g');
-  const [quantity3Price, setQuantity3Price] = useState('');
+  const [price3, setPrice3] = useState('');
   const [isOrganic, setIsOrganic] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
@@ -32,43 +31,58 @@ const AdminPage = () => {
   }, []);
 
   const handleImageChange = (e) => {
-    const selectedImage = e.target.files[0];
-    setImage(selectedImage);
+    const file = e.target.files[0];
 
-    // Display image preview
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setImagePreview(reader.result);
-    };
-    reader.readAsDataURL(selectedImage);
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setImage(file);
+        setProductImage(reader.result);
+      };
+
+      reader.readAsDataURL(file);
+    }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const apiUrlSwitch = (category) => {
+    let apiUrl = '';
 
-    // Create FormData object
-    const formData = new FormData();
-    formData.append('image', image);
-    formData.append('category', category);
-    formData.append('productName', productName);
-    formData.append('description', description);
-    formData.append('quantity1', quantity1);
-    formData.append('quantity1Unit', quantity1Unit);
-    formData.append('quantity1Price', quantity1Price);
-    formData.append('quantity2', quantity2);
-    formData.append('quantity2Unit', quantity2Unit);
-    formData.append('quantity2Price', quantity2Price);
-    formData.append('quantity3', quantity3);
-    formData.append('quantity3Unit', quantity3Unit);
-    formData.append('quantity3Price', quantity3Price);
-    formData.append('isOrganic', isOrganic);
+    switch (category) {
+      case 'Farmers':
+        apiUrl = 'http://localhost:3002/fromfarmers/fromfarmer';
+        break;
+      case 'Taste':
+        apiUrl = 'http://localhost:3002/tasteofourland/tasteofourland';
+        break;
+      case 'Love':
+        apiUrl = 'http://localhost:3002/loveofourladies/loveofourladies';
+        break;
+      default:
+        alert("Error APIURL");
+    }
 
+    return apiUrl;
+  };
+
+  const handleSubmit = async (values) => {
     try {
+      // Convert image to base64 string
+      const imageBase64 = productImage.split(',')[1];
+
+      // Add imageBase64 to values
+      values.imageBase64 = imageBase64;
+
+      // Get API URL based on category
+      const apiUrl = apiUrlSwitch(values.category);
+alert(apiUrl);
       // Make POST request using axios
-      const response = await axios.post('http://localhost:3002/loveofourladies/loveofourladiess', formData);
+      const response = await axios.post(apiUrl, values);
+
       // Handle success
       setSuccessMessage(response.data.message);
       setShowPopup(true);
+      alert(values.productName, " Created Successfully");
     } catch (error) {
       // Handle error
       console.error('Error submitting form:', error);
@@ -91,7 +105,7 @@ const AdminPage = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-4 md:p-8 rounded shadow-md">
+      <form className="max-w-md mx-auto bg-white p-4 md:p-8 rounded shadow-md">
 
         {/* Image Upload */}
         <div className="mb-4">
@@ -101,9 +115,9 @@ const AdminPage = () => {
             accept="image/*"
             onChange={handleImageChange}
           />
-          {imagePreview && (
+          {productImage && (
             <img
-              src={imagePreview}
+              src={productImage}
               alt="Image Preview"
               className="mt-2 w-full h-auto border rounded"
             />
@@ -173,8 +187,8 @@ const AdminPage = () => {
               type="number"
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
-              value={quantity1Price}
-              onChange={(e) => setQuantity1Price(e.target.value)}
+              value={price1}
+              onChange={(e) => setPrice1(e.target.value)}
               required
             />
           </div>
@@ -205,8 +219,8 @@ const AdminPage = () => {
               type="number"
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
-              value={quantity2Price}
-              onChange={(e) => setQuantity2Price(e.target.value)}
+              value={price2}
+              onChange={(e) => setPrice2(e.target.value)}
               required
             />
           </div>
@@ -237,8 +251,8 @@ const AdminPage = () => {
               type="number"
               className="w-1/2 p-2 border rounded"
               placeholder="Price"
-              value={quantity3Price}
-              onChange={(e) => setQuantity3Price(e.target.value)}
+              value={price3}
+              onChange={(e) => setPrice3(e.target.value)}
               required
             />
           </div>
@@ -273,6 +287,22 @@ const AdminPage = () => {
         <button
           type="submit"
           className="bg-black text-white py-2 px-4 rounded-md hover:bg-white hover:text-black w-full border border-black transition duration-300"
+          onClick={() => handleSubmit({
+          productImage,
+          category,
+          productName,
+          description,
+          quantity1,
+          quantity1Unit,
+          price1,
+          quantity2,
+          quantity2Unit,
+          price2,
+          quantity3,
+          quantity3Unit,
+          price3,
+          isOrganic,
+        })}
         >
           Submit
         </button>
