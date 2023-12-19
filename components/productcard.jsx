@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 // ProductCard component
-const ProductCard = ({ productImage, productName, description, price1, price2, price3, quantity1, quantity2, quantity3, quantity1Unit, quantity2Unit, quantity3Unit }) => {
+const ProductCard = ({ productImage, productName, description, price1, price2, price3, quantity1, quantity2, quantity3, quantity1Unit, quantity2Unit, quantity3Unit, isAvailableOn }) => {
   const [selectedWeight, setSelectedWeight] = useState(`${quantity1}${quantity1Unit}`);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

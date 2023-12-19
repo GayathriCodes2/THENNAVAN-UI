@@ -135,6 +135,7 @@ const AdminPage = () => {
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Price</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Organic</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Available</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
             </tr>
             <tr>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
@@ -151,6 +152,9 @@ const AdminPage = () => {
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">2</th>
               <th className="py-2 px-4 border-b border-r-2 lg:table-cell md:table-cell sm:table-cell">3</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
+
             </tr>
           </thead>
           <tbody>
