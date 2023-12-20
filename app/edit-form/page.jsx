@@ -132,7 +132,6 @@ const EditForm = () => {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            required
           />
           {productImage && (
             <img
