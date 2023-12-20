@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import axios from 'axios';
 
 const AdminPage = () => {
@@ -18,9 +19,9 @@ const AdminPage = () => {
   const [quantity3Unit, setQuantity3Unit] = useState('g');
   const [price3, setPrice3] = useState('');
   const [isOrganic, setIsOrganic] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [isAvailableOn, setIsAvailableOn] = useState('yes');
-  const [popupData, setPopupData] = useState(null);
 
   useEffect(() => {
     // Check authentication status
@@ -47,21 +48,23 @@ const AdminPage = () => {
   };
 
   const apiUrlSwitch = (category) => {
+    let apiUrl = '';
+
     switch (category) {
       case 'Farmers':
-        return 'http://localhost:3002/fromfarmer';
+        apiUrl = 'http://localhost:3002/fromfarmer';
+        break;
       case 'TasteOfOurLand':
-        return 'http://localhost:3002/tasteofourland';
+        apiUrl = 'http://localhost:3002/tasteofourland';
+        break;
       case 'loveOfOurLadies':
-        return 'http://localhost:3002/loveofourladies';
+        apiUrl = 'http://localhost:3002/loveofourladies';
+        break;
       default:
-        alert('Error APIURL');
-        return '';
+        alert("Error APIURL");
     }
-  };
 
-  const handlePopupClose = () => {
-    setPopupData(null);
+    return apiUrl;
   };
 
   const handleSubmit = async (values) => {
@@ -80,22 +83,32 @@ const AdminPage = () => {
 
       // Handle success
       setSuccessMessage(response.data.message);
-      setPopupData({ type: 'success', message: response.data.message });
+      setShowPopup(true);
     } catch (error) {
       // Handle error
       console.error('Error submitting form:', error);
-      setPopupData({ type: 'error', message: 'Product creation failed' });
+      alert("Product creation failed");
     }
   };
 
   return (
     <div className="container mx-auto mt-8">
-      {popupData && (
-        <div className={`fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75`}>
+      <div className="flex justify-start">
+        <Link href="/admin">
+          <button className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-green-600 active:shadow-none shadow-lg bg-gradient-to-tr from-green-600 to-green-500 border-green-700 text-white">
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="relative">Product List</span>
+          </button>
+
+        </Link>
+      </div>
+      {showPopup && (
+        
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white p-8 rounded shadow-md">
-            <p className={`${popupData.type === 'success' ? 'text-green-600' : 'text-red-600'} font-bold text-lg`}>{popupData.message}</p>
+            <p className="text-green-600 font-bold text-lg">{successMessage}</p>
             <button
-              onClick={handlePopupClose}
+              onClick={() => setShowPopup(false)}
               className="mt-4 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-white hover:text-green-500 border border-green-500 transition duration-1000"
             >
               Close
@@ -105,7 +118,7 @@ const AdminPage = () => {
       )}
 
       <form className="max-w-md mx-auto bg-white p-4 md:p-8 rounded shadow-md">
-    
+
         {/* Image Upload */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Upload Image</label>

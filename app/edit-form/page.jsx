@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 const EditForm = () => {
   const [id, setId] = useState('');
@@ -74,50 +75,65 @@ const EditForm = () => {
   };
 
   const apiUrlSwitch = (category) => {
-    let apiUrl = '';
-
     switch (category) {
       case 'Farmers':
-        apiUrl = 'http://localhost:3002/fromfarmers';
-        break;
+        return 'http://localhost:3002/fromfarmers';
       case 'TasteOfOurLand':
-        apiUrl = 'http://localhost:3002/tasteofourland';
-        break;
+        return 'http://localhost:3002/tasteofourland';
       case 'loveOfOurLadies':
-        apiUrl = 'http://localhost:3002/loveofourladies';
-        break;
+        return 'http://localhost:3002/loveofourladies';
       default:
         alert("Error APIURL");
+        return '';
     }
-
-    return apiUrl;
   };
 
   const handleSubmit = async (values) => {
     try {
       const imageBase64 = productImage.split(',')[1];
       values.imageBase64 = imageBase64;
+  
       const apiUrl = apiUrlSwitch(values.category);
-      const response = await axios.put(`${apiUrl}/${id}`, values);
-      setSuccessMessage(response.data.message);
+  
+      // Make the API request
+      await axios.put(`${apiUrl}/${id}`, values);
+  alert("************");
+      // Update success message and show popup after the API request is successful
+      setSuccessMessage("Updated Successfully");
       setShowPopup(true);
-      alert(`${values.productName} Updated Successfully`);
     } catch (error) {
       console.error('Error submitting form:', error);
+  
+      // Handle error by setting an error message and showing a popup
+      setSuccessMessage("Error Updating, Try Again Later!");
+      setShowPopup(true);
     }
+  };
+  
+  
+  const handlePopupClose = () => {
+    setShowPopup(false);
   };
 
   return (
     <div className="container mx-auto mt-8">
+      <div className="flex justify-start">
+        <Link href="/admin">
+          <button className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-green-600 active:shadow-none shadow-lg bg-gradient-to-tr from-green-600 to-green-500 border-green-700 text-white">
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="relative">Product List</span>
+          </button>
+        </Link>
+      </div>
       {showPopup && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white p-8 rounded shadow-md">
             <p className="text-green-600 font-bold text-lg">{successMessage}</p>
             <button
-              onClick={() => setShowPopup(false)}
+              onClick={handlePopupClose}
               className="mt-4 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-white hover:text-green-500 border border-green-500 transition duration-1000"
             >
-              Close
+              OK
             </button>
           </div>
         </div>
@@ -142,21 +158,6 @@ const EditForm = () => {
           )}
         </div>
 
-        {/* Category */}
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">Category</label>
-          <select
-            className="w-full p-2 border rounded"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            required
-          >
-            <option value="">Select Category</option>
-            <option value="Farmers">From Farmers</option>
-            <option value="TasteOfOurLand">Taste of our land</option>
-            <option value="loveOfOurLadies">Love of our ladies</option>
-          </select>
-        </div>
         {/* Product Name */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Product Name</label>
