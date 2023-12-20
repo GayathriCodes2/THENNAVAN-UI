@@ -48,7 +48,8 @@ const AdminPage = () => {
 
   const handleEditProduct = (productId, category) => {
     const editFormUrl = `/edit-form?id=${productId}&category=${category}`;
-    window.location.href = editFormUrl;  };
+    window.location.href = editFormUrl;
+  };
 
   const handleDeleteProduct = async (productId, category) => {
     try {
@@ -102,24 +103,28 @@ const AdminPage = () => {
           required
         >
           <option value="Farmers">From Farmers</option>
-            <option value="TasteOfOurLand">Taste of our land</option>
-            <option value="loveOfOurLadies">Love of our ladies</option>
+          <option value="TasteOfOurLand">Taste of our land</option>
+          <option value="loveOfOurLadies">Love of our ladies</option>
 
           {/* Add more options if needed */}
         </select>
-        <button
-          type="submit"
+        <a
+          href="#_"
+          className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-green-600 active:shadow-none shadow-lg bg-gradient-to-tr from-green-600 to-green-500 border-green-700 text-white"
           onClick={handleSubmit}
-          className="bg-black w-48 mr-4 text-white py-2 px-2 rounded-md hover:bg-white hover:text-black border border-black transition duration-50"
         >
-          Submit
-        </button>
+          <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+          <span className="relative">Submit</span>
+        </a>
+
       </div>
       <div className="flex justify-end">
         <Link href="/admin-form">
-          <button className="bg-black text-white py-2 px-4 mb-4" onClick={handleAddProduct}>
-            Add Product
+          <button className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-green-600 active:shadow-none shadow-lg bg-gradient-to-tr from-green-600 to-green-500 border-green-700 text-white" onClick={handleAddProduct}>
+            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+            <span className="relative">Add Product</span>
           </button>
+
         </Link>
       </div>
       <div className="container mx-auto p-4 mt-8 overflow-x-auto">
@@ -182,15 +187,16 @@ const AdminPage = () => {
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isAvailableOn ? 'Yes' : 'No'}</td>
                 <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
                 <td className="py-2 px-4 border-b my-auto">
-                  <button className="bg-green-500 rounded-3xl text-white py-1 px-2 mr-2" onClick={() => handleEditProduct(product._id, product.category)}>
-                    Edit
-                  </button>
-                  <button
-                    className="bg-red-500 rounded-3xl text-white py-1 px-2 mr-2"
-                    onClick={() => handleDeleteProduct(product._id, product.category)}
-                  >
-                    Delete
-                  </button>
+                  <a href="#_" className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-green-600 active:shadow-none shadow-lg bg-gradient-to-tr from-green-600 to-green-500 border-green-700 text-white" onClick={() => handleEditProduct(product._id, product.category)}>
+                    <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+                    <span className="relative">Edit</span>
+                  </a></td>
+                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">
+                  <a href="#_" className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-red-600 active:shadow-none shadow-lg bg-gradient-to-tr from-red-600 to-red-500 border-red-700 text-white" onClick={() => handleDeleteProduct(product._id, product.category)}>
+                    <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+                    <span className="relative">Delete</span>
+                  </a>
+
                 </td>
               </tr>
             ))}

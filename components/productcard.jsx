@@ -1,4 +1,4 @@
-// Import necessary libraries
+"use client"
 import React, { useState } from 'react';
 
 // ProductCard component
@@ -11,7 +11,7 @@ const ProductCard = ({ productImage, productName, description, price1, price2, p
   };
 
   const handlePreBookClick = () => {
-    const linkWithWeight = `https://wa.me/9677927081?text=Need%20${productName}%20weight%20${selectedWeight}`;
+    const linkWithWeight = `https://wa.me/9677927081?text=I%20Need%20to%20buy%20${productName}%20(${selectedWeight})`;
     console.log('Pre Book clicked for', productName, 'with weight', selectedWeight);
     window.location.href = linkWithWeight;
   };
@@ -39,7 +39,7 @@ const ProductCard = ({ productImage, productName, description, price1, price2, p
   return (
     <div className="flex border p-2">
       <div className='relative'>
-        
+
         <img
           src={productImage}
           alt={productName}

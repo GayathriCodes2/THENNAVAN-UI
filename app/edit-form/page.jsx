@@ -132,6 +132,7 @@ const EditForm = () => {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
+            required
           />
           {productImage && (
             <img
@@ -305,8 +306,7 @@ const EditForm = () => {
 
         {/* Submit Button */}
         <button
-          type="submit"
-          className="bg-black text-white py-2 px-4 rounded-md hover:bg-white hover:text-black w-full border border-black transition duration-300"
+          className="rounded w-full relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-gray-600 active:shadow-none shadow-lg bg-gradient-to-tr from-gray-600 to-gray-500 border-gray-700 text-white"
           onClick={() => handleSubmit({
             productImage,
             category,
@@ -321,10 +321,12 @@ const EditForm = () => {
             quantity3,
             quantity3Unit,
             price3,
-            isOrganic, isAvailableOn,
+            isOrganic,
+            isAvailableOn,
           })}
         >
-          Submit
+          <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-full group-hover:h-32 opacity-10"></span>
+          <span className="relative">Submit</span>
         </button>
       </form>
     </div>

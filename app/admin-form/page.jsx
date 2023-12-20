@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -21,6 +21,7 @@ const AdminPage = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [isAvailableOn, setIsAvailableOn] = useState('yes');
+
   useEffect(() => {
     // Check authentication status
     const authToken = localStorage.getItem('authToken');
@@ -75,17 +76,17 @@ const AdminPage = () => {
 
       // Get API URL based on category
       const apiUrl = apiUrlSwitch(values.category);
-      alert(apiUrl);
+
       // Make POST request using axios
       const response = await axios.post(apiUrl, values);
 
       // Handle success
       setSuccessMessage(response.data.message);
       setShowPopup(true);
-      alert(values.productName, " Created Successfully");
     } catch (error) {
       // Handle error
       console.error('Error submitting form:', error);
+      alert("Product creation failed");
     }
   };
 
@@ -114,6 +115,7 @@ const AdminPage = () => {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
+            required
           />
           {productImage && (
             <img
@@ -285,11 +287,9 @@ const AdminPage = () => {
           </div>
         </div>
 
-
         {/* Submit Button */}
         <button
-          type="submit"
-          className="bg-black text-white py-2 px-4 rounded-md hover:bg-white hover:text-black w-full border border-black transition duration-300"
+          className="rounded w-full relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-gray-600 active:shadow-none shadow-lg bg-gradient-to-tr from-gray-600 to-gray-500 border-gray-700 text-white"
           onClick={() => handleSubmit({
             productImage,
             category,
@@ -304,18 +304,17 @@ const AdminPage = () => {
             quantity3,
             quantity3Unit,
             price3,
-            isOrganic, isAvailableOn,
+            isOrganic,
+            isAvailableOn,
           })}
         >
-          Submit
+          <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-full group-hover:h-32 opacity-10"></span>
+          <span className="relative">Submit</span>
         </button>
+
       </form>
-
-
-
     </div>
   );
 }
-
 
 export default AdminPage;
