@@ -8,7 +8,9 @@ import '@styles/global.css';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Thennavan store',
+  title: 'Thennavan stores',
+  description: 'Thennavan Stores is an e-commerce platform connecting you directly with the farmers and women artisans of South Tamil Nadu. We offer a vibrant selection of organic produce, grown with care and respect for the land, and handcrafted delicacies made with love by our talented ladies.',
+  keyword: ''
 }
 
 
