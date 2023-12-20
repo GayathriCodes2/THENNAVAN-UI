@@ -138,8 +138,8 @@ const AdminPage = () => {
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Weight</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Quantity</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell" colSpan="3">Price</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Organic</th>
-              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">Is Available</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">IsOrganic</th>
+              <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">IsAvailable</th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
               <th className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell"></th>
             </tr>
@@ -167,33 +167,33 @@ const AdminPage = () => {
           <tbody>
             {products.map((product, index) => (
               <tr key={index}>
-                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{index}</td>
-                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">
+                <td className="p-2 border-b lg:table-cell md:table-cell sm:table-cell">{index}</td>
+                <td className="p-2 border-b lg:table-cell md:table-cell sm:table-cell">
                   <img
                     src={product.productImage}
                     alt="Image Preview"
                     className="mt-2 w-32 h-32 border rounded"
                   />
                 </td>
-                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
-                <td className="py-2 px-4 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
-                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1Unit}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2Unit}</td>
-                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3Unit}</td>
-                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2}</td>
-                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
-                <td className="py-2 px-4 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.price1}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price2}</td>
-                <td className="py-2 px-4 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isAvailableOn ? 'Yes' : 'No'}</td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
-                <td className="py-2 px-4 border-b my-auto">
+                <td className="p-2 border-b lg:table-cell md:table-cell sm:table-cell">{product.productName}</td>
+                <td className="p-2 border-b lg:table-cell md:table-cell sm:table-cell">{product.description}</td>
+                <td className="p-2 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1Unit}</td>
+                <td className="p-2 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2Unit}</td>
+                <td className="p-2 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3Unit}</td>
+                <td className="p-2 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity1}</td>
+                <td className="p-2 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity2}</td>
+                <td className="p-2 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.quantity3}</td>
+                <td className="p-2 border-b border-l-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.price1}</td>
+                <td className="p-2 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.price2}</td>
+                <td className="p-2 border-b border-r-2 text-center lg:table-cell md:table-cell sm:table-cell">{product.price3}</td>
+                <td className="p-2 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isAvailableOn ? 'Yes' : 'No'}</td>
+                <td className="p-2 border-b text-center lg:table-cell md:table-cell sm:table-cell">{product.isOrganic ? 'Yes' : 'No'}</td>
+                <td className="p-2 border-b my-auto">
                   <a href="#_" className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-green-600 active:shadow-none shadow-lg bg-gradient-to-tr from-green-600 to-green-500 border-green-700 text-white" onClick={() => handleEditProduct(product._id, product.category)}>
                     <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
                     <span className="relative">Edit</span>
                   </a></td>
-                <td className="py-2 px-4 border-b text-center lg:table-cell md:table-cell sm:table-cell">
+                <td className="p-2 border-b text-center lg:table-cell md:table-cell sm:table-cell">
                   <a href="#_" className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-red-600 active:shadow-none shadow-lg bg-gradient-to-tr from-red-600 to-red-500 border-red-700 text-white" onClick={() => handleDeleteProduct(product._id, product.category)}>
                     <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
                     <span className="relative">Delete</span>

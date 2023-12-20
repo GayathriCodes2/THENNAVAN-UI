@@ -18,9 +18,9 @@ const AdminPage = () => {
   const [quantity3Unit, setQuantity3Unit] = useState('g');
   const [price3, setPrice3] = useState('');
   const [isOrganic, setIsOrganic] = useState(true);
-  const [showPopup, setShowPopup] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [isAvailableOn, setIsAvailableOn] = useState('yes');
+  const [popupData, setPopupData] = useState(null);
 
   useEffect(() => {
     // Check authentication status
@@ -47,23 +47,21 @@ const AdminPage = () => {
   };
 
   const apiUrlSwitch = (category) => {
-    let apiUrl = '';
-
     switch (category) {
       case 'Farmers':
-        apiUrl = 'http://localhost:3002/fromfarmer';
-        break;
+        return 'http://localhost:3002/fromfarmer';
       case 'TasteOfOurLand':
-        apiUrl = 'http://localhost:3002/tasteofourland';
-        break;
+        return 'http://localhost:3002/tasteofourland';
       case 'loveOfOurLadies':
-        apiUrl = 'http://localhost:3002/loveofourladies';
-        break;
+        return 'http://localhost:3002/loveofourladies';
       default:
-        alert("Error APIURL");
+        alert('Error APIURL');
+        return '';
     }
+  };
 
-    return apiUrl;
+  const handlePopupClose = () => {
+    setPopupData(null);
   };
 
   const handleSubmit = async (values) => {
@@ -82,22 +80,22 @@ const AdminPage = () => {
 
       // Handle success
       setSuccessMessage(response.data.message);
-      setShowPopup(true);
+      setPopupData({ type: 'success', message: response.data.message });
     } catch (error) {
       // Handle error
       console.error('Error submitting form:', error);
-      alert("Product creation failed");
+      setPopupData({ type: 'error', message: 'Product creation failed' });
     }
   };
 
   return (
     <div className="container mx-auto mt-8">
-      {showPopup && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
+      {popupData && (
+        <div className={`fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75`}>
           <div className="bg-white p-8 rounded shadow-md">
-            <p className="text-green-600 font-bold text-lg">{successMessage}</p>
+            <p className={`${popupData.type === 'success' ? 'text-green-600' : 'text-red-600'} font-bold text-lg`}>{popupData.message}</p>
             <button
-              onClick={() => setShowPopup(false)}
+              onClick={handlePopupClose}
               className="mt-4 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-white hover:text-green-500 border border-green-500 transition duration-1000"
             >
               Close
@@ -107,7 +105,7 @@ const AdminPage = () => {
       )}
 
       <form className="max-w-md mx-auto bg-white p-4 md:p-8 rounded shadow-md">
-
+    
         {/* Image Upload */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Upload Image</label>
