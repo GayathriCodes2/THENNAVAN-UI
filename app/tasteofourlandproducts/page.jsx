@@ -10,7 +10,7 @@ const Page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://thennavan.onrender.com/tasteofourlands');
+        const response = await axios.get('http://localhost:3002/tasteofourlands');
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

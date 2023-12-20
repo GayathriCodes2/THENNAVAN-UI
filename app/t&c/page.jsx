@@ -54,6 +54,40 @@ const TermsAndConditions = () => {
           and growing to better serve you. Your feedback is our guiding light, and we welcome suggestions to enhance
           your journey with us.
         </li>
+
+        <li>
+          <strong>Acceptance of Terms:</strong> By accessing or using Thennavan Stores, you agree to be bound by these terms and conditions. If you do not agree, please inform us using our platform.
+        </li>
+        <li>
+          <strong>Product Information:</strong> Thennavan Stores aims to provide accurate and detailed information about the products listed. However, we do not guarantee the accuracy, completeness, or reliability of product descriptions. If you have any questions, feel free to contact us.
+        </li>
+        <li>
+          <strong>Sell With Us Agreement:</strong> Farmers and sellers participating in the "Sell With Us" program agree to adhere to the guidelines and policies outlined in the agreement. Thennavan Stores reserves the right to terminate any collaboration that violates these terms.
+        </li>
+        <li>
+          <strong>Pricing and Payment:</strong> All prices are in Indian Rupees (INR) unless stated otherwise. Thennavan Stores reserves the right to modify prices without prior notice. Payments are accepted through secure payment gateways. Currently, we do not offer Cash on Delivery (COD) as a payment option.
+        </li>
+        <li>
+          <strong>Order Confirmation:</strong> Upon placing an order, you will receive a WhatsApp confirmation with details of your purchase. This confirmation does not signify our acceptance of your order, but rather an acknowledgment of its receipt.
+        </li>
+        <li>
+          <strong>Shipping and Delivery:</strong> Thennavan Stores aims to process and dispatch orders promptly. However, we do not guarantee specific delivery dates. Delivery times may vary based on location and external factors beyond our control.
+        </li>
+        <li>
+          <strong>Returns and Refunds:</strong> At present, Thennavan Stores does not have a return policy. We encourage customers to carefully review product details before making a purchase. In case of any concerns or issues, please reach out to our customer support.
+        </li>
+        <li>
+          <strong>User Conduct:</strong> Users are expected to conduct themselves responsibly and ethically while using Thennavan Stores. Any misuse, abuse, or violation of our community guidelines may result in account suspension.
+        </li>
+        <li>
+          <strong>Intellectual Property:</strong> All content on Thennavan Stores, including images, text, and logos, is the intellectual property of Thennavan. Unauthorized use or reproduction of this content is strictly prohibited.
+        </li>
+        <li>
+          <strong>Modification of Terms:</strong> Thennavan Stores reserves the right to update or modify these terms and conditions at any time. Users are encouraged to review this page periodically for changes.
+        </li>
+        <li>
+          <strong>Contact Information:</strong> For any queries or concerns regarding these terms and conditions, please contact us at thennavanstores@gmail.com.
+        </li>
       </ol>
 
       <p className="text-sm md:text-base text-justify">

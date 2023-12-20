@@ -24,17 +24,17 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers';
+          apiUrl = 'http://localhost:3002/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'https://thennavan.onrender.com/tasteofourlands';
+          apiUrl = 'http://localhost:3002/tasteofourlands';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'https://thennavan.onrender.com/loveofourladiess';
+          apiUrl = 'http://localhost:3002/loveofourladiess';
           break;
         // Add more cases for additional categories if needed
         default:
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers';
+          apiUrl = 'http://localhost:3002/fromfarmers';
       }
 
       const response = await axios.get(apiUrl);
@@ -58,13 +58,13 @@ const AdminPage = () => {
       // Set axios URL based on selected category
       switch (category) {
         case 'Farmers':
-          apiUrl = 'https://thennavan.onrender.com/fromfarmers';
+          apiUrl = 'http://localhost:3002/fromfarmers';
           break;
         case 'TasteOfOurLand':
-          apiUrl = 'https://thennavan.onrender.com/tasteofourland';
+          apiUrl = 'http://localhost:3002/tasteofourland';
           break;
         case 'loveOfOurLadies':
-          apiUrl = 'https://thennavan.onrender.com/loveofourladies';
+          apiUrl = 'http://localhost:3002/loveofourladies';
           break;
         default:
           alert(`${category}`)

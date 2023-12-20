@@ -78,13 +78,13 @@ const EditForm = () => {
 
     switch (category) {
       case 'Farmers':
-        apiUrl = 'https://thennavan.onrender.com/fromfarmers';
+        apiUrl = 'http://localhost:3002/fromfarmers';
         break;
       case 'TasteOfOurLand':
-        apiUrl = 'https://thennavan.onrender.com/tasteofourland';
+        apiUrl = 'http://localhost:3002/tasteofourland';
         break;
       case 'loveOfOurLadies':
-        apiUrl = 'https://thennavan.onrender.com/loveofourladies';
+        apiUrl = 'http://localhost:3002/loveofourladies';
         break;
       default:
         alert("Error APIURL");
