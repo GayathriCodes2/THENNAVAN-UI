@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Thennavan stores',
-  description: 'Thennavan Stores is an e-commerce platform connecting you directly with the farmers and women artisans of South Tamil Nadu. We offer a vibrant selection of organic produce, grown with care and respect for the land, and handcrafted delicacies made with love by our talented ladies.',
+  description: '"Support Farmers Today".Thennavan is an e-commerce platform connecting you directly with the farmers and women artisans of South Tamil Nadu. We offer a vibrant selection of organic produce, grown with care and respect for the land, and handcrafted delicacies made with love by our talented ladies.',
   keywords: 'Thennavan, stores, e-commerce, South Tamil Nadu, organic produce, handcrafted delicacies, farmers, women artisans, sustainable farming, farmer empowerment, local produce, artisanal products, natural remedies, traditional flavors, agroecology, community-supported agriculture, women entrepreneurship, organic farming, cultural heritage, fair trade, agribusiness, eco-friendly products, health-conscious choices, South Indian delicacies, farm-to-table, ethical consumption, rural development, organic honey, handcrafts, banana fiber',
 
 };
