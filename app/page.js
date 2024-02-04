@@ -76,7 +76,7 @@ function page() {
         path="/fromfarmersproducts"
         ButtonContent="See More"
         imageUrl="/from-farmers.png"
-        altText="Farmer Logo"
+        altText="Farmer Logo" 
       />
 
       <div className='grid lg:grid-cols-4 grid-cols-2 justify-around'>

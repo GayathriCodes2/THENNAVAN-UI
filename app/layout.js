@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       <body className={inter.className}>
         <main>
           <Header />
-          <div className="px-2 lg:px-14 ">{children}</div>
+          <div className="px-2 lg:px-6 ">{children}</div>
           <Whatsapp />
           <Footer />
 

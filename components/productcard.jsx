@@ -71,7 +71,7 @@ const ProductCard = ({ productImage, productName, description, price1, price2, p
         <h4 className="lg:text-lg text-xs">{productName}</h4>
         <p className="text-gray-600 sm:text-sm text-xs ml-1">{description}</p>
         {!isAvailableOn && (
-          <p className='text-red-400 border border-red-400 my-1 bg-red-50 w-20 p-1 text-xs'>Out of Stock</p>
+          <p className='text-red-400 border border-red-400 my-1 bg-red-50 w-24 py-1 px-2 text-xs'>Out of Stock</p>
         )}
         <label htmlFor="weight" className="mt-2 text-sm text-gray-500">
           Select Weight:

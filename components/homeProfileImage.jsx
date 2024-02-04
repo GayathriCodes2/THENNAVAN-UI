@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const HomeProfileImage = ({ text, path, ButtonContent, imageUrl, altText }) => {
   return (
-    <div className="flex items-center justify-around py-10 text-black font-bold text-lg rounded-md">
+    <div className="flex items-center justify-around py-10 bg-slate-100 text-black font-bold text-lg rounded-md">
       {/* Add Image Tag */}
       <div className="lg:text-2xl flex mx-auto lg:text-center">
       {imageUrl && (
@@ -20,7 +20,7 @@ const HomeProfileImage = ({ text, path, ButtonContent, imageUrl, altText }) => {
 
 </div>
       {/* Button and Link */}
-      <Link href={path} className='self-end'>
+      <Link href={path} className='self-end my-auto mx-6'>
       <button class="w-full md:w-auto px-4 py-2 bg-white text-Black border-black rounded-full focus:outline-none border hover:bg-black hover:text-white text-sm">
             {ButtonContent}
         </button>
